@@ -126,4 +126,8 @@ public class Cliente implements Serializable {
 	public void setEmpleados(List<Empleado> empleados) {
 		this.empleados = empleados;
 	}
+	
+	public void setEmpleado(Empleado e) {
+		this.empleados.add(e);
+	}
 }
