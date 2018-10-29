@@ -49,6 +49,18 @@ public class Cliente implements Serializable {
 	private List<Empleado> empleados;
 	
 	
+	public Cliente(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida,
+			List<Empleado> empleados) {
+		super();
+		this.cuit_cuil = cuit_cuil;
+		this.domicilio = domicilio;
+		this.telefono = telefono;
+		this.mail = mail;
+		this.horaEntrada = horaEntrada;
+		this.horaSalida = horaSalida;
+		this.empleados = empleados;
+	}
+
 	public Cliente() {
 		
 	}
