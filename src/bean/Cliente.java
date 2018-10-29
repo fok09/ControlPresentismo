@@ -2,16 +2,32 @@ package bean;
 
 import java.io.Serializable;
 import java.sql.Time;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name = "cliente")
-public abstract class Cliente implements Serializable {
+@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(
+		name="tipo",
+		discriminatorType=DiscriminatorType.STRING
+		)
+public class Cliente implements Serializable {
 
 	/**
 	 * 
@@ -27,6 +43,11 @@ public abstract class Cliente implements Serializable {
 	protected String mail;
 	protected Time horaEntrada;
 	protected Time horaSalida;
+	
+	@OneToMany (cascade=CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name="empleados")
+	private List<Empleado> empleados;
+	
 	
 	public Cliente() {
 		
@@ -86,5 +107,11 @@ public abstract class Cliente implements Serializable {
 	public void setHoraSalida(Time horaSalida) {
 		this.horaSalida = horaSalida;
 	}
-	
+	public List<Empleado> getEmpleados() {
+		return empleados;
+	}
+
+	public void setEmpleados(List<Empleado> empleados) {
+		this.empleados = empleados;
+	}
 }
