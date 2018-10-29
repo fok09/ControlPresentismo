@@ -1,5 +1,7 @@
 package hbt;
 
+import hbt.*;
+
 public class testHibernate {
 
 	public static void main(String[] args) {

@@ -15,10 +15,12 @@ import bean.PersonaFisica;
 import bean.PersonaJuridica;
 import bean.Semanal;
 
+
 public class HibernateUtil {
 	private static final SessionFactory sessionFactory;
 	static {
 		try {
+			System.getProperty("java.security.policy");
 			Configuration config = new Configuration();
 			config.addAnnotatedClass(Cliente.class);
 			config.addAnnotatedClass(Contratacion.class);
@@ -31,7 +33,6 @@ public class HibernateUtil {
 			config.addAnnotatedClass(PersonaFisica.class);
 			config.addAnnotatedClass(PersonaJuridica.class);
 			config.addAnnotatedClass(Semanal.class);
-//			config.addAnnotatedClass(Entrada.class);
 			sessionFactory = config.buildSessionFactory();
 		} catch (Throwable ex) {
 			System.err.println("Initial SessionFactory creation failed." + ex);
