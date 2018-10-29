@@ -17,13 +17,21 @@ public class Fichada {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private Time horaEntrada;
-	private Time horaSalida;
+	private Time hora;
+	private String tipo;
 	
 	@OneToOne
 	@JoinColumn(name="empleado")
 	private Empleado empleado;
 	
+	
+	public Fichada(String tipo, Empleado empleado) {
+		super();
+		this.hora.getTime();
+		this.setTipo(tipo);
+		this.empleado = empleado;
+	}
+
 	public Fichada() {
 		
 	}
@@ -44,22 +52,21 @@ public class Fichada {
 		this.empleado = empleado;
 	}
 
-	public void setHoraEntrada(Time horaEntrada) {
-		this.horaEntrada = horaEntrada;
+	public void setHora(Time hora) {
+		this.hora = hora;
 	}
 
-	public void setHoraSalida(Time horaSalida) {
-		this.horaSalida = horaSalida;
+	public void getHora()
+	{
+		this.hora.getTime();
 	}
 
-	public void getHoraEntrada()
-	{
-		this.horaEntrada.getTime();
+	public String getTipo() {
+		return tipo;
 	}
-	
-	public void getHoraSalida()
-	{
-		this.horaSalida.getTime();
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 	
 }

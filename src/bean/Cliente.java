@@ -130,4 +130,16 @@ public class Cliente implements Serializable {
 	public void setEmpleado(Empleado e) {
 		this.empleados.add(e);
 	}
+	
+	public Empleado obtenerEmpleado(String dni) {
+		for(Empleado e: empleados) {
+			if(e.getDni().equals(dni))
+			{
+				return e;
+			}
+		}
+		
+		return null;
+	}
+	
 }
