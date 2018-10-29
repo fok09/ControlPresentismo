@@ -1,5 +1,6 @@
 package bean;
 
+import java.sql.Date;
 
 public class Empleado {
 	private String nombre;
