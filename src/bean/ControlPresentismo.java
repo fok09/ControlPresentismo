@@ -10,7 +10,7 @@ public class ControlPresentismo {
 	public Vector<Cliente> clientes;
 	public Vector<Contratacion> contratacion;
 	
-	void crearCliente(String cuit_cuil, String domicilio, String telefono, String mail,
+	public void crearCliente(String cuit_cuil, String domicilio, String telefono, String mail,
 			Time horaEntrada, Time horaSalida, List<Empleado> empleados) {
 		
 		for(Cliente c : this.clientes) {
@@ -21,7 +21,7 @@ public class ControlPresentismo {
 		}
 	}
 	
-	void eliminarCliente(String cuit_cuil) {	
+	public void eliminarCliente(String cuit_cuil) {	
 		
 		for(Cliente c : this.clientes) {
 			if(c.getCuit_cuil().equals(cuit_cuil)) {		
@@ -30,13 +30,14 @@ public class ControlPresentismo {
 		}
 	}
 	
-	void modificarCliente(String cuit_cuil, String domicilio, String telefono, String mail,
+	public void modificarCliente(String cuit_cuil, String domicilio, String telefono, String mail,
 			Time horaEntrada, Time horaSalida, Empleado empleado) {	
 		
-		Cliente cliente;
+		Cliente cliente = null; 
 		
 		for(Cliente c : this.clientes) {
-			if(c.getCuit_cuil().equals(cuit_cuil)) {		
+			if(c.getCuit_cuil().equals(cuit_cuil)) 
+			{		
 				cliente = c;
 				cliente.setDomicilio(domicilio);
 				cliente.setEmpleado(empleado);
@@ -47,6 +48,67 @@ public class ControlPresentismo {
 			}
 			
 		}		
+	}
+	
+	public void altaFichada(String tipo, String dni, String cuit_cuil) {
+	
+		for (Cliente c : clientes)
+			if(c.getCuit_cuil().equals(cuit_cuil))
+			{
+				Fichada f = new Fichada(tipo,c.obtenerEmpleado(dni));
+				this.fichadas.add(f);			
+			}	
+	}
+	
+	public void crearFacturaMensual(String tipoFactura, Date fechaPago, String cuit_cuil){
+		
+		Cliente cliente = null;
+		
+		for(Cliente c : this.clientes) {
+			if(c.getCuit_cuil().equals(cuit_cuil)) {		
+				cliente = c;
+			}
+		}
+		
+		Contratacion cont = new Mensual();
+		
+		Factura f = new Factura(cont.calcularMonto(), tipoFactura, fechaPago, cliente);
+		this.facturas.add(f);
+	
+	}
+	
+	public void crearFacturaSemanal(String tipoFactura, Date fechaPago, String cuit_cuil){
+		
+		Cliente cliente = null;
+		
+		for(Cliente c : this.clientes) {
+			if(c.getCuit_cuil().equals(cuit_cuil)) {		
+				cliente = c;
+			}
+		}
+		
+		Contratacion cont = new Semanal();
+		
+		Factura f = new Factura(cont.calcularMonto(), tipoFactura, fechaPago, cliente);
+		this.facturas.add(f);
+	
+	}
+	
+	public void crearFacturaEventual(String tipoFactura, Date fechaPago, String cuit_cuil){
+		
+		Cliente cliente = null;
+		
+		for(Cliente c : this.clientes) {
+			if(c.getCuit_cuil().equals(cuit_cuil)) {		
+				cliente = c;
+			}
+		}
+		
+		Contratacion cont = new Eventual();
+		
+		Factura f = new Factura(cont.calcularMonto(), tipoFactura, fechaPago, cliente);
+		this.facturas.add(f);
+	
 	}
 
 }

@@ -16,8 +16,6 @@ public class Mensual extends Contratacion {
 		super();
 	}
 	
-	
-
 	public float calcularMonto() {
 		
 		return this.monto;

@@ -45,16 +45,13 @@ public class Factura implements Serializable {
 	}
 
 	// constructor
-	public Factura(int nroFactura, float monto, String tipo, Date fechaPago, Cliente cliente,
-			Contratacion contratacion) {
-		this.nroFactura = nroFactura;
+	public Factura(float monto, String tipo, Date fechaPago, Cliente cliente) {
 		this.monto = monto;
 		this.fecha.getDate();
 		this.tipo = tipo;
 		this.pagado = false; // cuando se crea la factura figura como impago
 		this.fechaPago = fechaPago;
 		this.cliente = cliente;
-		this.contratacion = contratacion;
 	}
 	
 	public int getNroFactura() {
