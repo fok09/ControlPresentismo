@@ -5,12 +5,11 @@ import org.hibernate.cfg.Configuration;
 
 import bean.Cliente;
 
-
-
 public class HibernateUtil {
 	private static final SessionFactory sessionFactory;
 	static {
 		try {
+			System.getProperty("java.security.policy");
 			Configuration config = new Configuration();
 			config.addAnnotatedClass(Cliente.class);
 //			config.addAnnotatedClass(Entrada.class);
