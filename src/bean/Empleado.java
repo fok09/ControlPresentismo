@@ -1,5 +1,6 @@
 package bean;
 
+
 public class Empleado {
 	private String nombre;
 	private String apellido;
