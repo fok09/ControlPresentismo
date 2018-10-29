@@ -45,7 +45,7 @@ public class Cliente implements Serializable {
 	protected Time horaSalida;
 	
 	@OneToMany (cascade=CascadeType.ALL,fetch = FetchType.EAGER)
-	@JoinColumn(name="empleados")
+	@JoinColumn(name="idCliente")
 	private List<Empleado> empleados;
 	
 	
