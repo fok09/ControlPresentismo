@@ -4,8 +4,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import bean.Cliente;
-<<<<<<< HEAD
-=======
 import bean.Contratacion;
 import bean.CuentaCorriente;
 import bean.Empleado;
@@ -16,7 +14,7 @@ import bean.Mensual;
 import bean.PersonaFisica;
 import bean.PersonaJuridica;
 import bean.Semanal;
->>>>>>> refs/remotes/origin/master
+
 
 public class HibernateUtil {
 	private static final SessionFactory sessionFactory;
@@ -35,7 +33,6 @@ public class HibernateUtil {
 			config.addAnnotatedClass(PersonaFisica.class);
 			config.addAnnotatedClass(PersonaJuridica.class);
 			config.addAnnotatedClass(Semanal.class);
-//			config.addAnnotatedClass(Entrada.class);
 			sessionFactory = config.buildSessionFactory();
 		} catch (Throwable ex) {
 			System.err.println("Initial SessionFactory creation failed." + ex);
