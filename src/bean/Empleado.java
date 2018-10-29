@@ -27,6 +27,16 @@ public class Empleado implements Serializable{
 	private String telefono;
 	private Date fechaNac;
 	
+	public Empleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.mail = mail;
+		this.dni = dni;
+		this.telefono = telefono;
+		this.fechaNac = fechaNac;
+	}
+
 	public Empleado(){
 		
 	}
