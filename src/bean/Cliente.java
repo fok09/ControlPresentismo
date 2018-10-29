@@ -1,6 +1,7 @@
 package bean;
 
 import java.io.Serializable;
+import java.sql.Time;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,8 +21,12 @@ public abstract class Cliente implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected int id;
-	protected String nombre;
-	protected String dni;
+	protected String cuit_cuil;
+	protected String domicilio;
+	protected String telefono;
+	protected String mail;
+	protected Time horaEntrada;
+	protected Time horaSalida;
 	
 	public Cliente() {
 		
@@ -33,19 +38,53 @@ public abstract class Cliente implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getNombre() {
-		return nombre;
+
+	public String getCuit_cuil() {
+		return cuit_cuil;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public void setCuit_cuil(String cuit_cuil) {
+		this.cuit_cuil = cuit_cuil;
 	}
-	public String getDni() {
-		return dni;
+
+	public String getDomicilio() {
+		return domicilio;
 	}
-	public void setDni(String dni) {
-		this.dni = dni;
+
+	public void setDomicilio(String domicilio) {
+		this.domicilio = domicilio;
 	}
-	
-	
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public Time getHoraEntrada() {
+		return horaEntrada;
+	}
+
+	public void setHoraEntrada(Time horaEntrada) {
+		this.horaEntrada = horaEntrada;
+	}
+
+	public Time getHoraSalida() {
+		return horaSalida;
+	}
+
+	public void setHoraSalida(Time horaSalida) {
+		this.horaSalida = horaSalida;
+	}
 	
 }
