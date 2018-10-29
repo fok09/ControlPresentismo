@@ -1,14 +1,36 @@
 package bean;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class Empleado {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "empleado")
+public class Empleado implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String nombre;
 	private String apellido;
 	private String mail;
 	private String dni;
 	private String telefono;
 	private Date fechaNac;
+	
+	public Empleado(){
+		
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -44,5 +66,11 @@ public class Empleado {
 	}
 	public void setFechaNac(Date fechaNac) {
 		this.fechaNac = fechaNac;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }
