@@ -54,6 +54,7 @@ public class Factura implements Serializable {
 		this.cliente = cliente;
 	}
 	
+	//gets and sets
 	public int getNroFactura() {
 		return nroFactura;
 	}

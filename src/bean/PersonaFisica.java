@@ -1,5 +1,8 @@
 package bean;
 
+import java.sql.Time;
+import java.util.List;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
@@ -13,6 +16,15 @@ public class PersonaFisica extends Cliente{
 	private String nombre;
 	private String apellido;
 	
+	
+	
+	public PersonaFisica(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada,
+			Time horaSalida, List<Empleado> empleados, String nombre, String apellido) {
+		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, empleados);
+		this.nombre = nombre;
+		this.apellido = apellido;
+	}
+
 	public PersonaFisica() {
 		
 	}

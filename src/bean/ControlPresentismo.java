@@ -1,5 +1,6 @@
 package bean;
 
+import java.sql.Date;
 import java.sql.Time;
 import java.util.*;
 
@@ -10,13 +11,24 @@ public class ControlPresentismo {
 	public Vector<Cliente> clientes;
 	public Vector<Contratacion> contratacion;
 	
-	public void crearCliente(String cuit_cuil, String domicilio, String telefono, String mail,
-			Time horaEntrada, Time horaSalida, List<Empleado> empleados) {
+	public void crearClienteJuridico(String cuit_cuil, String domicilio, String telefono, String mail,
+			Time horaEntrada, Time horaSalida, List<Empleado> empleados, String razonSocial) {
 		
 		for(Cliente c : this.clientes) {
 			if(!c.getCuit_cuil().equals(cuit_cuil)) {		
-		Cliente cliente = new Cliente(cuit_cuil, domicilio, telefono, mail,horaEntrada, horaSalida, empleados);
-		clientes.addElement(cliente);
+					Cliente cliente = new PersonaJuridica(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, empleados, razonSocial);
+					clientes.addElement(cliente);
+			}
+		}
+	}
+	
+	public void crearClienteFisico(String cuit_cuil, String domicilio, String telefono, String mail,
+			Time horaEntrada, Time horaSalida, List<Empleado> empleados, String nombre, String apellido) {
+		
+		for(Cliente c : this.clientes) {
+			if(!c.getCuit_cuil().equals(cuit_cuil)) {		
+					Cliente cliente = new PersonaFisica(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, empleados, nombre, apellido);
+					clientes.addElement(cliente);
 			}
 		}
 	}
@@ -31,7 +43,7 @@ public class ControlPresentismo {
 	}
 	
 	public void modificarCliente(String cuit_cuil, String domicilio, String telefono, String mail,
-			Time horaEntrada, Time horaSalida, Empleado empleado) {	
+			Time horaEntrada, Time horaSalida) {	
 		
 		Cliente cliente = null; 
 		
@@ -40,7 +52,6 @@ public class ControlPresentismo {
 			{		
 				cliente = c;
 				cliente.setDomicilio(domicilio);
-				cliente.setEmpleado(empleado);
 				cliente.setHoraEntrada(horaEntrada);
 				cliente.setHoraSalida(horaSalida);
 				cliente.setMail(mail);
@@ -48,6 +59,16 @@ public class ControlPresentismo {
 			}
 			
 		}		
+	}
+	
+	public void agregarEmpleado(String cuit_cuil, String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac) {
+		
+		for(Cliente c : this.clientes) {
+			if(c.getCuit_cuil().equals(cuit_cuil)) {		
+				c.agregarEmpleado(nombre, apellido, mail, dni, telefono, fechaNac);
+			}
+		}
+		
 	}
 	
 	public void altaFichada(String tipo, String dni, String cuit_cuil) {
@@ -109,6 +130,16 @@ public class ControlPresentismo {
 		Factura f = new Factura(cont.calcularMonto(), tipoFactura, fechaPago, cliente);
 		this.facturas.add(f);
 	
+	}
+	
+	public void registrarPago(int nroFactura) {
+	
+		for(Factura f : this.facturas) {
+			if(f.getNroFactura() == nroFactura) {		
+				f.registrarPago();
+			}
+		}
+		
 	}
 
 }

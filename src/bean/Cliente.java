@@ -1,6 +1,7 @@
 package bean;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
 
@@ -140,6 +141,13 @@ public class Cliente implements Serializable {
 		}
 		
 		return null;
+	}
+
+	public void agregarEmpleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac) {
+	
+		Empleado e = new Empleado(nombre, apellido, mail, dni, telefono, fechaNac);
+		empleados.add(e);
+	
 	}
 	
 }
