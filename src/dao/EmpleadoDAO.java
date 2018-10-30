@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import bean.Cliente;
 import bean.Empleado;
 import hbt.HibernateUtil;
 
@@ -52,20 +53,5 @@ public class EmpleadoDAO implements Serializable{
 		return result;
 	}
 	
-	public Empleado getByCliente(int idCliente) {
-		Session session = sf.getCurrentSession();
-		session.beginTransaction();
-		Empleado result = (Empleado) session.createQuery("FROM Empleado E WHERE E.idCliente = " + idCliente).uniqueResult();
-		session.getTransaction().commit();
-		return result;
+			
 	}
-	
-	
-	public List<Empleado> getEmpleadosByCliente(int idCliente){
-		Session session = sf.openSession();
-		@SuppressWarnings("unchecked")
-		List<Empleado> list = session.createQuery("from Empleado E WHERE E.idCliente =" + idCliente).list();
-		session.close();
-		return list;
-	}
-}

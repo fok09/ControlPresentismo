@@ -27,11 +27,6 @@ private static EmpleadoDAO dao;
 		return dao.getById(idEmpleado);
 	}
 	
-	public static Empleado getEmpleadoByCliente(Cliente cliente){
-		return dao.getByCliente(cliente.getId());
-	}
-	
-	public static List<Empleado> getEmpleadosByCliente(Cliente cliente){
-		return dao.getEmpleadosByCliente(cliente.getId());
-	}
+		
+		
 }

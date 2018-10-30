@@ -2,8 +2,11 @@ package bean;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,6 +25,14 @@ public class Fichada {
 	private String tipo;
 	private Date fecha;
 	
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
 	@OneToOne
 	@JoinColumn(name="empleado")
 	private Empleado empleado;
@@ -29,10 +40,10 @@ public class Fichada {
 	
 	public Fichada(String tipo, Empleado empleado) {
 		super();
-		this.hora.getTime();
+		this.hora = new Time(System.currentTimeMillis());
 		this.setTipo(tipo);
 		this.empleado = empleado;
-		this.fecha.getDate();
+		this.fecha = new Date(2018,11,04);
 	}
 
 	public Fichada() {
@@ -59,9 +70,9 @@ public class Fichada {
 		this.hora = hora;
 	}
 
-	public void getHora()
+	public long getHora()
 	{
-		this.hora.getTime();
+		return this.hora.getTime();
 	}
 
 	public String getTipo() {
