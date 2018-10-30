@@ -1,6 +1,7 @@
 package dto;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.sql.Time;
 import bean.Empleado;
 
@@ -8,28 +9,22 @@ public class FichadaDTO implements Serializable {
 
     private static final long serialVersionUID = 324767771881426451L;
 
-    private int id;
 	private Time hora;
 	private String tipo;
 	private Empleado empleado;
+	private Date fecha;
 
-    public FichadaDTO(int id, Time hora, String tipo, Empleado empleado) {
-        this.id = id;
-    	this.hora = hora;
-        this.tipo = tipo;
-        this.empleado = empleado;
+    public FichadaDTO(String tipo, Empleado empleado) {
+  		super();
+		
+		this.hora.getTime();
+		this.tipo=tipo;
+		this.empleado = empleado;
+		this.fecha.getDate();
     }
     
     public FichadaDTO() {
     }
-
-    public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public Time getHora() {
 		return hora;

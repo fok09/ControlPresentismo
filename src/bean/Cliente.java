@@ -175,4 +175,15 @@ public class Cliente implements Serializable {
 		return null;
 	}
 	
+	public Empleado obtenerEmpleadoPorLegajo(String legajo) {
+		for(Empleado e: empleados) {
+			if(e.getLegajo().equals(legajo))
+			{
+				return e;
+			}
+		}
+		
+		return null;
+	}
+	
 }
