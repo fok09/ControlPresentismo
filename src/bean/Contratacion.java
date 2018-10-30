@@ -23,7 +23,7 @@ import javax.persistence.Table;
 		name="tipo",
 		discriminatorType=DiscriminatorType.STRING
 		)
-public abstract class Contratacion implements Serializable{
+public class Contratacion implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -34,15 +34,32 @@ public abstract class Contratacion implements Serializable{
 	@JoinColumn(name="idServicio")
 	private Servicio servicio;
 	
-	protected Date fechaInicial;
-	protected Date fechaFinal;
-	protected int cantHoras;
-	protected int cantEmpleados;
+	@OneToOne
+	@JoinColumn(name="idCliente")
+	private Cliente cliente;
 	
-	public Contratacion(Date fechaInicial, Date fechaFinal, int cantHoras) {
+	
+	private Date fechaInicial;
+	private Date fechaFinal;
+	private int cantHoras;
+	private int cantEmpleados;
+	private float montoFinal;
+	
+	
+	public Contratacion(Date fechaInicial, Date fechaFinal, int cantHoras, float montoFinal, Cliente cliente) {
 		
 	}
 	
-	public abstract float calcularMonto();
+	
+	public Contratacion(Servicio servicio, Date fechaInicial, Date fechaFinal, int cantHoras, int cantEmpleados, float montoFinal, Cliente cliente) {
+		this.servicio = servicio;
+		this.fechaInicial = fechaInicial;
+		this.fechaFinal = fechaFinal;
+		this.cantHoras = cantHoras;
+		this.cantEmpleados = cantEmpleados;
+		this.montoFinal = montoFinal;
+		this.cliente = cliente;
+	}
+
 
 }

@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "servicio")
-public abstract class Servicio implements Serializable{
+public class Servicio implements Serializable{
 
 	/**
 	 * 
@@ -24,19 +24,17 @@ public abstract class Servicio implements Serializable{
 	protected float monto;
 	protected float porcentajeEmpleado;
 	
-	public Servicio() {
-		
-	}
-
-	
 	public Servicio(String nombre, float monto, float porcentajeEmpleado) {
 		super();
 		this.nombre = nombre;
 		this.monto = monto;
 		this.porcentajeEmpleado = porcentajeEmpleado;
+	}	
+	
+	public Servicio() {
+		
 	}
-
-
+	
 	public int getId() {
 		return id;
 	}
