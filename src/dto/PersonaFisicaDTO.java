@@ -7,33 +7,33 @@ public class PersonaFisicaDTO extends ClienteDTO implements Serializable {
 
     private static final long serialVersionUID = 312767771881426451L;
 
-	private static int id;
+	
 	private String nombre;
 	private String apellido;
 
-	public PersonaFisicaDTO(String nombre, String apellido) {
-		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
-		this.nombre = nombre;
-		this.apellido = apellido;
-	}
+//	public PersonaFisicaDTO(String nombre, String apellido) {
+//		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
+//		this.nombre = nombre;
+//		this.apellido = apellido;
+//	}
 
     public PersonaFisicaDTO() {
     }
 
-	public PersonaFisicaDTO(String nombre2, String apellido2, String cuit_cuil, String domicilio, String telefono,
+	public PersonaFisicaDTO(String nombre, String apellido, String cuit_cuil, String domicilio, String telefono,
 			String mail, Time horaEntrada, Time horaSalida) {
-		//super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
+		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		PersonaFisicaDTO.id = id;
-	}
+//
+//	public int getId() {
+//		return id;
+//	}
+//
+//	public void setId(int id) {
+//		PersonaFisicaDTO.id = id;
+//	}
 
 	public String getNombre() {
 		return nombre;
