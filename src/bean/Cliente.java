@@ -51,7 +51,7 @@ public class Cliente implements Serializable {
 	@JoinColumn(name="idCliente")
 	private List<Empleado> empleados;
 	
-	
+	// constructor Cliente con lista de empleados
 	public Cliente(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida,
 			List<Empleado> empleados) {
 		super();
@@ -64,6 +64,18 @@ public class Cliente implements Serializable {
 		this.empleados = empleados;
 	}
 
+	//constructor Cliente sin lista de empleados
+	public Cliente(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida) {
+		super();
+		this.cuit_cuil = cuit_cuil;
+		this.domicilio = domicilio;
+		this.telefono = telefono;
+		this.mail = mail;
+		this.horaEntrada = horaEntrada;
+		this.horaSalida = horaSalida;
+	}
+	
+	
 	public void agregarEmpleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac) {
 		
 		Empleado e = new Empleado(nombre, apellido, mail, dni, telefono, fechaNac);
