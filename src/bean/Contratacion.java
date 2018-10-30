@@ -1,6 +1,7 @@
 package bean;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -22,17 +23,17 @@ import javax.persistence.Table;
 		)
 public abstract class Contratacion implements Serializable{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected int id;
 	protected float monto;
+	protected Date fechaInicial;
+	protected Date fechaFinal;
+	protected int cantHoras;
 	
-	public Contratacion() {
+	public Contratacion(Date fechaInicial, Date fechaFinal, int cantHoras) {
 		
 	}
 	

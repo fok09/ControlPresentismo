@@ -9,8 +9,10 @@ public class ControlPresentismo {
 	public Vector<Fichada> fichadas;
 	public Vector<Factura> facturas;
 	public Vector<Cliente> clientes;
-	public Vector<Contratacion> contratacion;
+	public Vector<Contratacion> contrataciones;
 	
+/*	DAR DE ALTA CLIENTE CON LISTA DE EMPLEADOS
+
 	public void crearClienteJuridico(String cuit_cuil, String domicilio, String telefono, String mail,
 			Time horaEntrada, Time horaSalida, List<Empleado> empleados, String razonSocial) {
 		
@@ -28,6 +30,28 @@ public class ControlPresentismo {
 		for(Cliente c : this.clientes) {
 			if(!c.getCuit_cuil().equals(cuit_cuil)) {		
 					Cliente cliente = new PersonaFisica(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, empleados, nombre, apellido);
+					clientes.addElement(cliente);
+			}
+		}
+	}*/
+	
+	public void crearClienteJuridico(String cuit_cuil, String domicilio, String telefono, String mail,
+			Time horaEntrada, Time horaSalida, String razonSocial) {
+		
+		for(Cliente c : this.clientes) {
+			if(!c.getCuit_cuil().equals(cuit_cuil)) {		
+					Cliente cliente = new PersonaJuridica(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, razonSocial);
+					clientes.addElement(cliente);
+			}
+		}
+	}
+	
+	public void crearClienteFisico(String cuit_cuil, String domicilio, String telefono, String mail,
+			Time horaEntrada, Time horaSalida, String nombre, String apellido) {
+		
+		for(Cliente c : this.clientes) {
+			if(!c.getCuit_cuil().equals(cuit_cuil)) {		
+					Cliente cliente = new PersonaFisica(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, nombre, apellido);
 					clientes.addElement(cliente);
 			}
 		}
@@ -81,7 +105,7 @@ public class ControlPresentismo {
 			}	
 	}
 	
-	public void crearFacturaMensual(String tipoFactura, Date fechaPago, String cuit_cuil){
+	public void crearFactura(float monto, String tipoFactura, String cuit_cuil){
 		
 		Cliente cliente = null;
 		
@@ -90,47 +114,41 @@ public class ControlPresentismo {
 				cliente = c;
 			}
 		}
-		
-		Contratacion cont = new Mensual();
-		
-		Factura f = new Factura(cont.calcularMonto(), tipoFactura, fechaPago, cliente);
+	
+		Factura f = new Factura(monto, tipoFactura, cliente);
 		this.facturas.add(f);
 	
+	}	
+	
+	public void CrearContratacionMensual(Date fechaInicial, Date fechaFinal, int cantHoras,
+				String tipoFactura, String cuit_cuil) {
+		
+		Contratacion cont = new Mensual(fechaInicial, fechaFinal, cantHoras);
+		this.contrataciones.add(cont);
+		
+		this.crearFactura(cont.calcularMonto(), tipoFactura, cuit_cuil);
+		
 	}
 	
-	public void crearFacturaSemanal(String tipoFactura, Date fechaPago, String cuit_cuil){
-		
-		Cliente cliente = null;
-		
-		for(Cliente c : this.clientes) {
-			if(c.getCuit_cuil().equals(cuit_cuil)) {		
-				cliente = c;
-			}
-		}
-		
-		Contratacion cont = new Semanal();
-		
-		Factura f = new Factura(cont.calcularMonto(), tipoFactura, fechaPago, cliente);
-		this.facturas.add(f);
+	public void CrearContratacionSemanal(Date fechaInicial, Date fechaFinal, int cantHoras,
+			String tipoFactura, String cuit_cuil) {
 	
-	}
+	Contratacion cont = new Mensual(fechaInicial, fechaFinal, cantHoras);
+	this.contrataciones.add(cont);
 	
-	public void crearFacturaEventual(String tipoFactura, Date fechaPago, String cuit_cuil){
-		
-		Cliente cliente = null;
-		
-		for(Cliente c : this.clientes) {
-			if(c.getCuit_cuil().equals(cuit_cuil)) {		
-				cliente = c;
-			}
-		}
-		
-		Contratacion cont = new Eventual();
-		
-		Factura f = new Factura(cont.calcularMonto(), tipoFactura, fechaPago, cliente);
-		this.facturas.add(f);
+	this.crearFactura(cont.calcularMonto(), tipoFactura, cuit_cuil);
 	
-	}
+}
+	
+	public void CrearContratacionEventual(Date fechaInicial, Date fechaFinal, int cantHoras,
+			String tipoFactura, String cuit_cuil) {
+	
+	Contratacion cont = new Mensual(fechaInicial, fechaFinal, cantHoras);
+	this.contrataciones.add(cont);
+	
+	this.crearFactura(cont.calcularMonto(), tipoFactura, cuit_cuil);
+	
+}
 	
 	public void registrarPago(int nroFactura) {
 	
