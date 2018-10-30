@@ -8,6 +8,8 @@ import java.util.List;
 import bean.Cliente;
 import bean.Empleado;
 import bean.Fichada;
+import bean.PersonaFisica;
+import bean.PersonaJuridica;
 import srv.ClienteSrv;
 import srv.FichadaSrv;
 
@@ -15,6 +17,12 @@ public class testHibernate {
 
 	public static void main(String[] args) {
 		HibernateUtil.getSessionFactory();
+		
+		PersonaFisica PJ = new PersonaFisica("test", "domicilio", "telefono", "mail", new Time(System.currentTimeMillis()), new Time(System.currentTimeMillis()),"nombre","apel");
+//		ClienteSrv.grabarCliente(PJ);
+//		ClienteSrv.grabarPersonaJuridica(PJ);
+		ClienteSrv.grabarPersonaFisica(PJ);
+		
 		
 		Cliente cliente1 = new Cliente("20353591836","Pasteur 555", "34343443","mail@mail.com",new Time(System.currentTimeMillis()),new Time(System.currentTimeMillis()+3));
 		Cliente cliente2 = new Cliente("333333333","Lima 717", "4534534","test@test.com",new Time(System.currentTimeMillis()),new Time(System.currentTimeMillis()+3));
