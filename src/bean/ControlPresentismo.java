@@ -2,6 +2,8 @@ package bean;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 
 public class ControlPresentismo {
@@ -171,20 +173,20 @@ public class ControlPresentismo {
 	}
 	
 // REPORTE CANTIDAD DE HORAS VER!!!!!!!!!!!!	
-	public long reportarCantHorasTrabajadasEmpleado(String cuit_cuil, String dni, Date fechaInicio, Date fechaFin) {
+	public LocalTime reportarCantHorasTrabajadasEmpleado(String cuit_cuil, String dni, Date fechaInicio, Date fechaFin) {
 				
 		List<Fichada> fichadasE = new Vector();
 		List<Fichada> fichadasS = new Vector();
 		
-		long contE = 0;
-		long contS = 0;
+		LocalTime contE = LocalTime.of(0, 0);
+		LocalTime contS = LocalTime.of(0, 0);
 		
 		for(Fichada f : this.fichadas) {
 			if(f.getEmpleado().getDni().equals(dni)) {		
 				if ((f.getFecha().compareTo(fechaInicio)<0) && (fechaFin.compareTo(f.getFecha()) < 0) 
 						&& (fechaInicio == f.getFecha()) && (f.getFecha() == fechaFin))  
 				{
-					if(f.getTipo().equals('E'))
+					if(f.getTipo().equals("E"))
 						fichadasE.add(f);
 					else
 						fichadasS.add(f);	
@@ -193,14 +195,21 @@ public class ControlPresentismo {
 		}
 		
 		for(Fichada f: fichadasE) {
-			contE = contE + f.getHora();
+			//LocalTime ahora = LocalTime.of(f.getHora().getHours(), f.getHora().getMinutes());
+			contE.plusHours(f.getHora().getHours());
+			contE.plusMinutes(f.getHora().getMinutes());
 		}
 		
 		for(Fichada f: fichadasS) {
-			contS = contS + f.getHora();
+			//LocalTime ahora = LocalTime.of(f.getHora().getHours(), f.getHora().getMinutes());
+			contS.plusHours(f.getHora().getHours());
+			contS.plusMinutes(f.getHora().getMinutes());
 		}
 		
-		return contS - contE;
+		contS.minusHours(contE.getHour());
+		contS.minusMinutes(contE.getMinute());
+		
+		return contS;
 	}
 	
 	
