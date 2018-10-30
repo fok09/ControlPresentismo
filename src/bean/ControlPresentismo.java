@@ -141,5 +141,16 @@ public class ControlPresentismo {
 		}
 		
 	}
+	
+	public float consultarDeudaCliente(String cuit_cuil) {
+		
+		for(Cliente c : this.clientes) {
+			if(c.getCuit_cuil().equals(cuit_cuil)) {		
+				return c.consultarDeuda();
+			}
+		}
+		
+		return 0;
+	}
 
 }
