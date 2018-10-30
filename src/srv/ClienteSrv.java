@@ -29,5 +29,8 @@ private static ClienteDAO dao;
 		return dao.getByCuit(cuit);
 	}
 	
+	public static List<Cliente> getClientes(){
+		return dao.getClientes();
+	}
 	
 }

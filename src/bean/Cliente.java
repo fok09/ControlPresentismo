@@ -20,8 +20,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
-
 @Entity
 @Table(name = "cliente")
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
@@ -51,6 +49,10 @@ public class Cliente implements Serializable {
 	@JoinColumn(name="idCliente")
 	private List<Empleado> empleados;
 	
+	public Cliente() {
+		
+	}
+	
 	// constructor Cliente con lista de empleados
 	public Cliente(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida,
 			List<Empleado> empleados) {
@@ -76,9 +78,9 @@ public class Cliente implements Serializable {
 	}
 	
 	
-	public void agregarEmpleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac) {
+	public void agregarEmpleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac, String legajo) {
 		
-		Empleado e = new Empleado(nombre, apellido, mail, dni, telefono, fechaNac);
+		Empleado e = new Empleado(nombre, apellido, mail, dni, telefono, fechaNac, legajo);
 		empleados.add(e);
 	
 	}
