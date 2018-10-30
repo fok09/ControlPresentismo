@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.sql.Time;
 import java.util.*;
 
+import bean.Empleado;
+
 public class ClienteDTO implements Serializable {
 
     private static final long serialVersionUID = 304767771881426451L;
