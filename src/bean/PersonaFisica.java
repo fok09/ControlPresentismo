@@ -25,10 +25,6 @@ public class PersonaFisica extends Cliente{
 		this.apellido = apellido;
 	}
 
-	public PersonaFisica() {
-		
-	}
-	
 	public String getNombre() {
 		return nombre;
 	}

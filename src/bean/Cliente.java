@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.List;
+import java.util.Vector;
 
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
@@ -44,6 +45,7 @@ public class Cliente implements Serializable {
 	protected String mail;
 	protected Time horaEntrada;
 	protected Time horaSalida;
+	protected Vector<Factura> facturas;
 	
 	@OneToMany (cascade=CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="idCliente")
@@ -62,20 +64,26 @@ public class Cliente implements Serializable {
 		this.empleados = empleados;
 	}
 
-	public Cliente(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida) {
-		super();
-		this.cuit_cuil = cuit_cuil;
-		this.domicilio = domicilio;
-		this.telefono = telefono;
-		this.mail = mail;
-		this.horaEntrada = horaEntrada;
-		this.horaSalida = horaSalida;
-		}
+	public void agregarEmpleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac) {
+		
+		Empleado e = new Empleado(nombre, apellido, mail, dni, telefono, fechaNac);
+		empleados.add(e);
 	
-	public Cliente() {
+	}
+	
+	public float consultarDeuda() {
+		
+		float deuda = 0;
+		
+		for (Factura f: facturas)
+			if (!f.isPagado())
+				deuda = deuda + f.getMonto();
+		return deuda;
 		
 	}
 	
+	
+	//gets and sets
 	public int getId() {
 		return id;
 	}
@@ -151,13 +159,6 @@ public class Cliente implements Serializable {
 		}
 		
 		return null;
-	}
-
-	public void agregarEmpleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac) {
-	
-		Empleado e = new Empleado(nombre, apellido, mail, dni, telefono, fechaNac);
-		empleados.add(e);
-	
 	}
 	
 }
