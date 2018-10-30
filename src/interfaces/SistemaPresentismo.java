@@ -11,6 +11,7 @@ import dto.PersonaJuridicaDTO;
 
 public interface SistemaPresentismo extends Remote {
 
+	//metodos con DTOs
 	public void crearClienteJuridico(PersonaJuridicaDTO personaJuridicaDTO) throws RemoteException;
 	
 	public void crearClienteFisico(PersonaFisicaDTO personaFisicaDTO) throws RemoteException;
