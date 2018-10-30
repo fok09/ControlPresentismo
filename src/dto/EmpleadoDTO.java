@@ -7,6 +7,7 @@ public class EmpleadoDTO implements Serializable {
 
     private static final long serialVersionUID = 304767881881426451L;
 
+    private int id;
 	private String nombre;
 	private String apellido;
 	private String mail;
@@ -14,8 +15,9 @@ public class EmpleadoDTO implements Serializable {
 	private String telefono;
 	private Date fechaNac;
 
-    public EmpleadoDTO(String nombre, String apellido, String mail,	String dni, String telefono, Date fechaNac) {
-        this.nombre = nombre;
+    public EmpleadoDTO(int id, String nombre, String apellido, String mail,	String dni, String telefono, Date fechaNac) {
+        this.id = id;
+    	this.nombre = nombre;
         this.apellido = apellido;
         this.mail = mail;
         this.dni = dni;
@@ -76,6 +78,14 @@ public class EmpleadoDTO implements Serializable {
 
 	public void setFechaNac(Date fechaNac) {
 		this.fechaNac = fechaNac;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
     
     

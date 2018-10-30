@@ -2,16 +2,18 @@ package dto;
 
 import java.io.Serializable;
 
-public class EventualDTO implements Serializable {
+public class EventualDTO extends ContratacionDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	private int id;
 	private float cantHoras;
 	private float precioHora;
 
 	
 	
-    public EventualDTO(float cantHoras, float precioHora) {
-		this.cantHoras = cantHoras;
+    public EventualDTO(int id, float monto, float cantHoras, float precioHora) {
+		super(id, monto);
+    	this.cantHoras = cantHoras;
 		this.precioHora = precioHora;
 	}
 
@@ -36,6 +38,14 @@ public class EventualDTO implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

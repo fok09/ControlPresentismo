@@ -8,13 +8,15 @@ public class CuentaCorrienteDTO implements Serializable {
 
     private static final long serialVersionUID = 304767071881426451L;
 
+    private int id;
 	private float saldo;
 	private Vector<FacturaDTO> facturas;
 	private Cliente cliente;
 
 	
 	
-    public CuentaCorrienteDTO(float saldo, Vector<FacturaDTO> facturas, Cliente cliente) {
+    public CuentaCorrienteDTO(int id, float saldo, Vector<FacturaDTO> facturas, Cliente cliente) {
+    	this.id = id;
 		this.saldo = saldo;
 		this.facturas = facturas;
 		this.cliente = cliente;
@@ -62,6 +64,16 @@ public class CuentaCorrienteDTO implements Serializable {
 
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 

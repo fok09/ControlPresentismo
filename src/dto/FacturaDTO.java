@@ -8,6 +8,7 @@ public class FacturaDTO {
 	
     private static final long serialVersionUID = 304167071881426451L;
     
+    private int id;
 	private int nroFactura;
 	private float monto;
 	private Date fecha;
@@ -17,8 +18,9 @@ public class FacturaDTO {
 	private Cliente cliente;
 	private Contratacion contratacion;
 	
-	public FacturaDTO(int nroFactura, float monto, Date fecha, String tipo, boolean pagado, Date fechaPago,
+	public FacturaDTO(int  id, int nroFactura, float monto, Date fecha, String tipo, boolean pagado, Date fechaPago,
 			Cliente cliente, Contratacion contratacion) {
+		this.id = id;
 		this.nroFactura = nroFactura;
 		this.monto = monto;
 		this.fecha = fecha;
@@ -29,11 +31,8 @@ public class FacturaDTO {
 		this.contratacion = contratacion;
 	}
 	
-	
-	
 	public FacturaDTO() {
 	}
-
 
 	public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -101,6 +100,14 @@ public class FacturaDTO {
 
 	public void setContratacion(Contratacion contratacion) {
 		this.contratacion = contratacion;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 
