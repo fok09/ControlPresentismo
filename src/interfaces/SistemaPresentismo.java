@@ -16,10 +16,10 @@ import bean.Fichada;
 public interface SistemaPresentismo extends Remote {
 
 	public void crearClienteJuridico(String cuit_cuil, String domicilio, String telefono, String mail,
-			Time horaEntrada, Time horaSalida, List<Empleado> empleados, String razonSocial) throws RemoteException;
+			Time horaEntrada, Time horaSalida, String razonSocial) throws RemoteException;
 	
 	public void crearClienteFisico(String cuit_cuil, String domicilio, String telefono, String mail,
-			Time horaEntrada, Time horaSalida, List<Empleado> empleados, String nombre, String apellido) throws RemoteException;
+			Time horaEntrada, Time horaSalida, String nombre, String apellido) throws RemoteException;
 	
 	public void eliminarCliente(String cuit_cuil) throws RemoteException;
 	
