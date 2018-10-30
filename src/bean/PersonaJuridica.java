@@ -1,5 +1,6 @@
 package bean;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.List;
 
@@ -8,14 +9,16 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("Juridica")
-public class PersonaJuridica extends Cliente{
+public class PersonaJuridica extends Cliente implements Serializable{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private String razonSocial;
 	
-	
+	public PersonaJuridica() {
+		
+	}
 
 	public PersonaJuridica(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada,
 			Time horaSalida, List<Empleado> empleados, String razonSocial) {

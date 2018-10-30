@@ -24,11 +24,11 @@ public interface SistemaPresentismo extends Remote {
 	
 	public void altaFichada(FichadaDTO fichadaDTO) throws RemoteException;
 	
-	public void crearFacturaMensual(FacturaDTO facturaDTO) throws RemoteException;
+	public void crearFactura(FacturaDTO facturaDTO) throws RemoteException;
 	
-	public void crearFacturaSemanal(FacturaDTO facturaDTO) throws RemoteException;
-	
-	public void crearFacturaEventual(FacturaDTO facturaDTO) throws RemoteException;
+//	public void crearFacturaSemanal(FacturaDTO facturaDTO) throws RemoteException;
+//	
+//	public void crearFacturaEventual(FacturaDTO facturaDTO) throws RemoteException;
 	
 	public void registrarPago(int nroFactura) throws RemoteException;
 		

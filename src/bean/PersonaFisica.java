@@ -1,5 +1,6 @@
 package bean;
 
+import java.io.Serializable;
 import java.sql.Time;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import javax.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("Fisica")
-public class PersonaFisica extends Cliente{
+public class PersonaFisica extends Cliente implements Serializable{
 	/**
 	 * 
 	 */
@@ -16,6 +17,10 @@ public class PersonaFisica extends Cliente{
 	private String nombre;
 	private String apellido;
 	
+public PersonaFisica() {
+		
+	}
+
 	public PersonaFisica(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada,
 			Time horaSalida, List<Empleado> empleados, String nombre, String apellido) {
 		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, empleados);
