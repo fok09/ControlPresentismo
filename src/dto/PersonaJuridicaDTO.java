@@ -1,6 +1,7 @@
 package dto;
 
 import java.io.Serializable;
+import java.sql.Time;
 
 public class PersonaJuridicaDTO extends ClienteDTO implements Serializable {
 
@@ -14,6 +15,13 @@ public class PersonaJuridicaDTO extends ClienteDTO implements Serializable {
 		this.razonSocial = razonSocial;
 	}
 
+	public PersonaJuridicaDTO(String razonSocial, String cuit_cuil, String domicilio, String telefono,
+			String mail, Time horaEntrada, Time horaSalida) {
+		//super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
+		this.razonSocial = razonSocial;
+	}
+	
+	
 	public int getId() {
 		return id;
 	}
