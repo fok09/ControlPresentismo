@@ -20,8 +20,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
-
 @Entity
 @Table(name = "cliente")
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
@@ -50,6 +48,10 @@ public class Cliente implements Serializable {
 	@OneToMany (cascade=CascadeType.ALL,fetch = FetchType.EAGER)
 	@JoinColumn(name="idCliente")
 	private List<Empleado> empleados;
+	
+	public Cliente() {
+		
+	}
 	
 	// constructor Cliente con lista de empleados
 	public Cliente(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida,

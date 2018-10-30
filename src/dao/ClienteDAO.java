@@ -57,7 +57,7 @@ public class ClienteDAO implements Serializable{
 	public Cliente getByCuit(String cuit) {
 		Session session = sf.getCurrentSession();
 		session.beginTransaction();
-		Cliente cliente = (Cliente) session.createQuery("FROM cliente E WHERE E.cuit_cuil = " + cuit).uniqueResult();
+		Cliente cliente = (Cliente) session.createQuery("FROM Cliente E WHERE E.cuit_cuil = " + cuit).uniqueResult();
 		session.getTransaction().commit();
 		return cliente;
 	}
@@ -65,7 +65,7 @@ public class ClienteDAO implements Serializable{
 	public List<Cliente> getClientes(){
 		Session session = sf.openSession();
 		@SuppressWarnings("unchecked")
-		List<Cliente> list = session.createQuery("from cliente").list();
+		List<Cliente> list = session.createQuery("from Cliente").list();
 		session.close();
 		return list;
 	}

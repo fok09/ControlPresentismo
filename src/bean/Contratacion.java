@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -28,10 +30,14 @@ public abstract class Contratacion implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected int id;
-	protected float monto;
+	@OneToOne
+	@JoinColumn(name="idServicio")
+	private Servicio servicio;
+	
 	protected Date fechaInicial;
 	protected Date fechaFinal;
 	protected int cantHoras;
+	protected int cantEmpleados;
 	
 	public Contratacion(Date fechaInicial, Date fechaFinal, int cantHoras) {
 		
