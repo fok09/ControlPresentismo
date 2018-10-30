@@ -1,5 +1,6 @@
 package bean;
 
+import java.sql.Date;
 import java.sql.Time;
 
 import javax.persistence.Entity;
@@ -19,6 +20,7 @@ public class Fichada {
 	private int id;
 	private Time hora;
 	private String tipo;
+	private Date fecha;
 	
 	@OneToOne
 	@JoinColumn(name="empleado")
@@ -30,6 +32,7 @@ public class Fichada {
 		this.hora.getTime();
 		this.setTipo(tipo);
 		this.empleado = empleado;
+		this.fecha.getDate();
 	}
 
 	public Fichada() {

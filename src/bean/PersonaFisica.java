@@ -24,6 +24,13 @@ public class PersonaFisica extends Cliente{
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}
+	
+	public PersonaFisica(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada,
+			Time horaSalida, String nombre, String apellido) {
+		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
+		this.nombre = nombre;
+		this.apellido = apellido;
+	}
 
 	public String getNombre() {
 		return nombre;

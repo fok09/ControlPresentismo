@@ -23,6 +23,13 @@ public class PersonaJuridica extends Cliente{
 		this.razonSocial = razonSocial;
 	}
 	
+	public PersonaJuridica(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada,
+			Time horaSalida, String razonSocial) {
+		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
+		this.razonSocial = razonSocial;
+	}
+	
+	
 	public String getRazonSocial() {
 		return razonSocial;
 	}
