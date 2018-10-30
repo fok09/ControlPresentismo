@@ -21,7 +21,15 @@ public class FacturaDAO {
 		return instancia;
 	}
 	
-	public void grabarFactura (List<Factura> facturas){
+	public void grabarFactura(Factura factura) {
+		Session session = sf.getCurrentSession();
+		session.beginTransaction();
+		session.merge(factura);
+		session.flush();
+		session.getTransaction().commit();
+	}
+	
+	public void grabarFacturas (List<Factura> facturas){
 		Session session = sf.openSession();
 		session.beginTransaction();
 		for (Factura factura:facturas){
@@ -31,5 +39,22 @@ public class FacturaDAO {
 		session.getTransaction().commit();
 		session.close();
 	}
+	
+	public List<Factura> getFacturas(){
+		Session session = sf.openSession();
+		@SuppressWarnings("unchecked")
+		List<Factura> list = session.createQuery("from Factura").list();
+		session.close();
+		return list;
+	}
+	
+	public List<Factura> getFacturasByCliente(int idCliente){
+		Session session = sf.openSession();
+		@SuppressWarnings("unchecked")
+		List<Factura> list = session.createQuery("from Factura E WHERE E.cliente =" + idCliente).list();
+		session.close();
+		return list;
+	}
+
 
 }
