@@ -20,6 +20,7 @@ public class Empleado implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	private String legajo;
 	private String nombre;
 	private String apellido;
 	private String mail;
@@ -27,8 +28,9 @@ public class Empleado implements Serializable{
 	private String telefono;
 	private Date fechaNac;
 	
-	public Empleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac) {
+	public Empleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac, String legajo) {
 		super();
+		this.legajo = legajo;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.mail = mail;

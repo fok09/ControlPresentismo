@@ -78,9 +78,9 @@ public class Cliente implements Serializable {
 	}
 	
 	
-	public void agregarEmpleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac) {
+	public void agregarEmpleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac, String legajo) {
 		
-		Empleado e = new Empleado(nombre, apellido, mail, dni, telefono, fechaNac);
+		Empleado e = new Empleado(nombre, apellido, mail, dni, telefono, fechaNac, legajo);
 		empleados.add(e);
 	
 	}

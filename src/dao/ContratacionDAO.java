@@ -1,11 +1,8 @@
 package dao;
 
-import java.util.List;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import bean.Cliente;
 import bean.Contratacion;
 import hbt.HibernateUtil;
 
@@ -21,14 +18,14 @@ public class ContratacionDAO {
 		return instancia;
 	}
 	
-	public void grabarContratacion (List<Contratacion> contrataciones){
-		Session session = sf.openSession();
+	public void grabarContratacion(Contratacion contratacion) {
+		Session session = sf.getCurrentSession();
 		session.beginTransaction();
-		for (Contratacion contratacion:contrataciones){
-			session.merge(contratacion);
-		}
+		session.merge(contratacion);
 		session.flush();
 		session.getTransaction().commit();
-		session.close();
 	}
+	
+	
+	
 }

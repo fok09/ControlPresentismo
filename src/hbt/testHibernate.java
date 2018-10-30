@@ -20,10 +20,10 @@ public class testHibernate {
 
 		
 		List<Empleado> empleados = new ArrayList<Empleado>();
-		Empleado empleado1 = new Empleado("Franco","Botiuk","franco@botiuk.com","35359183","444445666", new Date(19901104));
-		Empleado empleado2 = new Empleado("Carla","Torino","carla@torino.com","4366564","8888888", new Date(19901104));
+		Empleado empleado1 = new Empleado("Franco","Botiuk","franco@botiuk.com","35359183","444445666", new Date(19901104),"00001");
+		Empleado empleado2 = new Empleado("Carla","Torino","carla@torino.com","4366564","8888888", new Date(19901104),"00002");
 		
-		Empleado empleado3 = new Empleado("test","test","test@test.com","test","test", new Date(19901104));
+		Empleado empleado3 = new Empleado("test","test","test@test.com","test","test", new Date(19901104), "00003");
 		
 		empleados.add(empleado1);
 		empleados.add(empleado2);
