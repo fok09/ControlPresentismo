@@ -25,6 +25,14 @@ public class Fichada {
 	private String tipo;
 	private Date fecha;
 	
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
 	@OneToOne
 	@JoinColumn(name="empleado")
 	private Empleado empleado;
@@ -62,9 +70,9 @@ public class Fichada {
 		this.hora = hora;
 	}
 
-	public void getHora()
+	public long getHora()
 	{
-		this.hora.getTime();
+		return this.hora.getTime();
 	}
 
 	public String getTipo() {

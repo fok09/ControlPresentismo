@@ -8,6 +8,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import bean.Cliente;
+import bean.PersonaFisica;
+import bean.PersonaJuridica;
 import hbt.HibernateUtil;
 
 public class ClienteDAO implements Serializable{
@@ -44,6 +46,22 @@ public class ClienteDAO implements Serializable{
 		session.flush();
 		session.getTransaction().commit();
 		session.close();
+	}
+	
+	public void grabarPersonaJuridica(PersonaJuridica personaJuridica) {
+		Session session = sf.getCurrentSession();
+		session.beginTransaction();
+		session.merge(personaJuridica);
+		session.flush();
+		session.getTransaction().commit();
+	}
+	
+	public void grabarPersonaFisica(PersonaFisica personaFisica) {
+		Session session = sf.getCurrentSession();
+		session.beginTransaction();
+		session.merge(personaFisica);
+		session.flush();
+		session.getTransaction().commit();
 	}
 	
 	public Cliente getById(int id) {
