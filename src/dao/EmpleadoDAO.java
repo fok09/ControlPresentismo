@@ -26,24 +26,24 @@ public class EmpleadoDAO implements Serializable{
 		return instancia;
 	}
 	
-//	public void grabarEmpleado(Empleado empleado) {
-//		Session session = sf.getCurrentSession();
-//		session.beginTransaction();
-//		session.merge(empleado);
-//		session.flush();
-//		session.getTransaction().commit();
-//	}
+	public void grabarEmpleado(Empleado empleado) {
+		Session session = sf.getCurrentSession();
+		session.beginTransaction();
+		session.merge(empleado);
+		session.flush();
+		session.getTransaction().commit();
+	}
 	
-//	public void grabarEmpleados (List<Empleado> empleados){
-//		Session session = sf.openSession();
-//		session.beginTransaction();
-//		for (Empleado empleado:empleados){
-//			session.merge(empleado);
-//		}
-//		session.flush();
-//		session.getTransaction().commit();
-//		session.close();
-//	}
+	public void grabarEmpleados (List<Empleado> empleados){
+		Session session = sf.openSession();
+		session.beginTransaction();
+		for (Empleado empleado:empleados){
+			session.merge(empleado);
+		}
+		session.flush();
+		session.getTransaction().commit();
+		session.close();
+	}
 	
 	public Empleado getById(int id) {
 		Session session = sf.getCurrentSession();
