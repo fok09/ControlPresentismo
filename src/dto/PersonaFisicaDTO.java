@@ -11,7 +11,7 @@ public class PersonaFisicaDTO extends ClienteDTO implements Serializable {
 	private String apellido;
 
 	public PersonaFisicaDTO(String nombre, String apellido) {
-		super(id, cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, empleados);
+		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}

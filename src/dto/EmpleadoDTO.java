@@ -14,8 +14,9 @@ public class EmpleadoDTO implements Serializable {
 	private String dni;
 	private String telefono;
 	private Date fechaNac;
+	private String legajo;
 
-    public EmpleadoDTO(int id, String nombre, String apellido, String mail,	String dni, String telefono, Date fechaNac) {
+    public EmpleadoDTO(int id, String nombre, String apellido, String mail,	String dni, String telefono, Date fechaNac, String legajo) {
         this.id = id;
     	this.nombre = nombre;
         this.apellido = apellido;
@@ -23,8 +24,19 @@ public class EmpleadoDTO implements Serializable {
         this.dni = dni;
         this.telefono = telefono;
         this.fechaNac = fechaNac;
+        this.legajo = legajo;
     }
 
+    public EmpleadoDTO(String nombre, String apellido, String mail,	String dni, String telefono, Date fechaNac, String legajo) {
+    	this.nombre = nombre;
+        this.apellido = apellido;
+        this.mail = mail;
+        this.dni = dni;
+        this.telefono = telefono;
+        this.fechaNac = fechaNac;
+        this.legajo = legajo;
+    }
+    
     public EmpleadoDTO() {
     }
 
@@ -86,6 +98,14 @@ public class EmpleadoDTO implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getLegajo() {
+		return legajo;
+	}
+
+	public void setLegajo(String legajo) {
+		this.legajo = legajo;
 	}
     
     

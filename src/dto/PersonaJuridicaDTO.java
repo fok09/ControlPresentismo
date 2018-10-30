@@ -10,7 +10,7 @@ public class PersonaJuridicaDTO extends ClienteDTO implements Serializable {
 	private String razonSocial;
 
 	public PersonaJuridicaDTO(String razonSocial) {
-		super(id, cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, empleados);
+		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
 		this.razonSocial = razonSocial;
 	}
 

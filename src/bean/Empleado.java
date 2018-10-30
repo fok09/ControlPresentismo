@@ -85,4 +85,12 @@ public class Empleado implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	public String getLegajo() {
+		return legajo;
+	}
+
+	public void setLegajo(String legajo) {
+		this.legajo = legajo;
+	}
 }
