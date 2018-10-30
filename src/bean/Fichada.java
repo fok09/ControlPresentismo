@@ -2,6 +2,7 @@ package bean;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,6 +38,7 @@ public class Fichada {
 	
 	public Fichada(String tipo, Empleado empleado) {
 		super();
+		
 		this.hora.getTime();
 		this.setTipo(tipo);
 		this.empleado = empleado;
@@ -67,9 +69,9 @@ public class Fichada {
 		this.hora = hora;
 	}
 
-	public long getHora()
+	public Time getHora()
 	{
-		return this.hora.getTime();
+		return this.hora;
 	}
 
 	public String getTipo() {
