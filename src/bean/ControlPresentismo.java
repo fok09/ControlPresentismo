@@ -11,7 +11,7 @@ public class ControlPresentismo {
 	public Vector<Cliente> clientes;
 	public Vector<Contratacion> contrataciones;
 	public Vector<Servicio> servicios;
-	
+
 	
 /*	DAR DE ALTA CLIENTE CON LISTA DE EMPLEADOS
 
@@ -170,18 +170,38 @@ public class ControlPresentismo {
 		return 0;
 	}
 	
-/* REPORTE CANTIDAD DE HORAS VER!!!!!!!!!!!!	
-	public Time reportarCantHorasTrabajadasEmpleado(String cuit_cuil, String dni, Date fechaInicio, Date fechaFin) {
+// REPORTE CANTIDAD DE HORAS VER!!!!!!!!!!!!	
+	public long reportarCantHorasTrabajadasEmpleado(String cuit_cuil, String dni, Date fechaInicio, Date fechaFin) {
+				
+		List<Fichada> fichadasE = new Vector();
+		List<Fichada> fichadasS = new Vector();
+		
+		long contE = 0;
+		long contS = 0;
 		
 		for(Fichada f : this.fichadas) {
 			if(f.getEmpleado().getDni().equals(dni)) {		
-				
+				if ((f.getFecha().compareTo(fechaInicio)<0) && (fechaFin.compareTo(f.getFecha()) < 0) 
+						&& (fechaInicio == f.getFecha()) && (f.getFecha() == fechaFin))  
+				{
+					if(f.getTipo().equals('E'))
+						fichadasE.add(f);
+					else
+						fichadasS.add(f);	
+				}
 			}
 		}
 		
+		for(Fichada f: fichadasE) {
+			contE = contE + f.getHora();
+		}
 		
-		return cantHoras;
+		for(Fichada f: fichadasS) {
+			contS = contS + f.getHora();
+		}
+		
+		return contS - contE;
 	}
-	*/
+	
 	
 }
