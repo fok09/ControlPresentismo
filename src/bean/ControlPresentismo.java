@@ -133,22 +133,22 @@ public class ControlPresentismo {
 	public void CrearContratacionSemanal(Date fechaInicial, Date fechaFinal, int cantHoras,
 			String tipoFactura, String cuit_cuil) {
 	
-	Contratacion cont = new Mensual(fechaInicial, fechaFinal, cantHoras);
-	this.contrataciones.add(cont);
+		Contratacion cont = new Mensual(fechaInicial, fechaFinal, cantHoras);
+		this.contrataciones.add(cont);
 	
-	this.crearFactura(cont.calcularMonto(), tipoFactura, cuit_cuil);
+		this.crearFactura(cont.calcularMonto(), tipoFactura, cuit_cuil);
 	
-}
+	}
 	
 	public void CrearContratacionEventual(Date fechaInicial, Date fechaFinal, int cantHoras,
 			String tipoFactura, String cuit_cuil) {
 	
-	Contratacion cont = new Mensual(fechaInicial, fechaFinal, cantHoras);
-	this.contrataciones.add(cont);
+		Contratacion cont = new Mensual(fechaInicial, fechaFinal, cantHoras);
+		this.contrataciones.add(cont);
 	
-	this.crearFactura(cont.calcularMonto(), tipoFactura, cuit_cuil);
+		this.crearFactura(cont.calcularMonto(), tipoFactura, cuit_cuil);
 	
-}
+	}
 	
 	public void registrarPago(int nroFactura) {
 	
@@ -170,5 +170,19 @@ public class ControlPresentismo {
 		
 		return 0;
 	}
-
+	
+/* REPORTE CANTIDAD DE HORAS VER!!!!!!!!!!!!	
+	public Time reportarCantHorasTrabajadasEmpleado(String cuit_cuil, String dni, Date fechaInicio, Date fechaFin) {
+		
+		for(Fichada f : this.fichadas) {
+			if(f.getEmpleado().getDni().equals(dni)) {		
+				
+			}
+		}
+		
+		
+		return cantHoras;
+	}
+	*/
+	
 }
