@@ -171,46 +171,5 @@ public class ControlPresentismo {
 		
 		return 0;
 	}
-	
-// REPORTE CANTIDAD DE HORAS VER!!!!!!!!!!!!	
-	public LocalTime reportarCantHorasTrabajadasEmpleado(String cuit_cuil, String dni, Date fechaInicio, Date fechaFin) {
-				
-		List<Fichada> fichadasE = new Vector();
-		List<Fichada> fichadasS = new Vector();
-		
-		LocalTime contE = LocalTime.of(0, 0);
-		LocalTime contS = LocalTime.of(0, 0);
-		
-		for(Fichada f : this.fichadas) {
-			if(f.getEmpleado().getDni().equals(dni)) {		
-				if ((f.getFecha().compareTo(fechaInicio)<0) && (fechaFin.compareTo(f.getFecha()) < 0) 
-						&& (fechaInicio == f.getFecha()) && (f.getFecha() == fechaFin))  
-				{
-					if(f.getTipo().equals("E"))
-						fichadasE.add(f);
-					else
-						fichadasS.add(f);	
-				}
-			}
-		}
-		
-		for(Fichada f: fichadasE) {
-			//LocalTime ahora = LocalTime.of(f.getHora().getHours(), f.getHora().getMinutes());
-			contE.plusHours(f.getHora().getHour());
-			contE.plusMinutes(f.getHora().getMinute());
-		}
-		
-		for(Fichada f: fichadasS) {
-			//LocalTime ahora = LocalTime.of(f.getHora().getHours(), f.getHora().getMinutes());
-			contS.plusHours(f.getHora().getHour());
-			contS.plusMinutes(f.getHora().getMinute());
-		}
-		
-		contS.minusHours(contE.getHour());
-		contS.minusMinutes(contE.getMinute());
-		
-		return contS;
-	}
-	
-	
+
 }
