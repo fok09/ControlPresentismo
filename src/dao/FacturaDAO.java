@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import bean.Cliente;
+import bean.Empleado;
 import bean.Factura;
 import hbt.HibernateUtil;
 
@@ -55,6 +56,13 @@ public class FacturaDAO {
 		session.close();
 		return list;
 	}
-
+	
+	public Factura getFacturaByNro(int nroFac) {
+		Session session = sf.getCurrentSession();
+		session.beginTransaction();
+		Factura result = (Factura) session.get(Factura.class, nroFac);
+		session.getTransaction().commit();
+		return result;
+	}
 
 }
