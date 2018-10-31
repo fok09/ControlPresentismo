@@ -35,6 +35,7 @@ public class ClienteDAO implements Serializable{
 		session.merge(cliente);
 		session.flush();
 		session.getTransaction().commit();
+		session.close();
 	}
 	
 	public void grabarClientes (List<Cliente> clientes){
@@ -54,6 +55,7 @@ public class ClienteDAO implements Serializable{
 		session.merge(personaJuridica);
 		session.flush();
 		session.getTransaction().commit();
+		session.close();
 	}
 	
 	public void grabarPersonaFisica(PersonaFisica personaFisica) {
@@ -62,6 +64,7 @@ public class ClienteDAO implements Serializable{
 		session.merge(personaFisica);
 		session.flush();
 		session.getTransaction().commit();
+		session.close();
 	}
 	
 	public Cliente getById(int id) {
