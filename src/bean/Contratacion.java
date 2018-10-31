@@ -18,11 +18,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "contratacion")
-@Inheritance (strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(
-		name="tipo",
-		discriminatorType=DiscriminatorType.STRING
-		)
 public class Contratacion implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -45,6 +40,9 @@ public class Contratacion implements Serializable{
 	private int cantEmpleados;
 	private float montoFinal;
 	
+	public Contratacion() {
+		
+	}
 	
 	public Contratacion(Date fechaInicial, Date fechaFinal, int cantHoras, float montoFinal, Cliente cliente) {
 		
@@ -59,6 +57,70 @@ public class Contratacion implements Serializable{
 		this.cantEmpleados = cantEmpleados;
 		this.montoFinal = montoFinal;
 		this.cliente = cliente;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public Servicio getServicio() {
+		return servicio;
+	}
+
+	public void setServicio(Servicio servicio) {
+		this.servicio = servicio;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Date getFechaInicial() {
+		return fechaInicial;
+	}
+
+	public void setFechaInicial(Date fechaInicial) {
+		this.fechaInicial = fechaInicial;
+	}
+
+	public Date getFechaFinal() {
+		return fechaFinal;
+	}
+
+	public void setFechaFinal(Date fechaFinal) {
+		this.fechaFinal = fechaFinal;
+	}
+
+	public int getCantHoras() {
+		return cantHoras;
+	}
+
+	public void setCantHoras(int cantHoras) {
+		this.cantHoras = cantHoras;
+	}
+
+	public int getCantEmpleados() {
+		return cantEmpleados;
+	}
+
+	public void setCantEmpleados(int cantEmpleados) {
+		this.cantEmpleados = cantEmpleados;
+	}
+
+	public float getMontoFinal() {
+		return montoFinal;
+	}
+
+	public void setMontoFinal(float montoFinal) {
+		this.montoFinal = montoFinal;
 	}
 
 

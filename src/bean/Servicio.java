@@ -22,13 +22,13 @@ public class Servicio implements Serializable{
 	protected int id;
 	protected String nombre;
 	protected float monto;
-	protected float porcentajeEmpleado;
+	protected float adicionalEmpleado;
 	
-	public Servicio(String nombre, float monto, float porcentajeEmpleado) {
+	public Servicio(String nombre, float monto, float adicionalEmpleado) {
 		super();
 		this.nombre = nombre;
 		this.monto = monto;
-		this.porcentajeEmpleado = porcentajeEmpleado;
+		this.adicionalEmpleado = adicionalEmpleado;
 	}	
 	
 	public Servicio() {
@@ -59,16 +59,11 @@ public class Servicio implements Serializable{
 		this.monto = monto;
 	}
 
-	public float getPorcentajeEmpleado() {
-		return porcentajeEmpleado;
+	public float getAdicionalEmpleado() {
+		return adicionalEmpleado;
 	}
 
-	public void setPorcentajeEmpleado(float porcentajeEmpleado) {
-		this.porcentajeEmpleado = porcentajeEmpleado;
+	public void setAdicionalEmpleado(float adicionalEmpleado) {
+		this.adicionalEmpleado = adicionalEmpleado;
 	}
-	
-	
-	
-	
-
 }

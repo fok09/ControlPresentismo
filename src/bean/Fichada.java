@@ -43,6 +43,16 @@ public class Fichada {
 		this.empleado = empleado;
 		this.fecha.getDate();
 	}
+	
+	
+	public Fichada(String tipo, Empleado empleado, Time hora, Date fecha) {
+		super();
+	
+		this.hora = hora;
+		this.setTipo(tipo);
+		this.empleado = empleado;
+		this.fecha = fecha;
+	}
 
 	public Fichada() {
 		

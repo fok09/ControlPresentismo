@@ -1,38 +1,44 @@
 package dao;
 
+import java.io.Serializable;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import bean.Contratacion;
+import bean.Servicio;
 import hbt.HibernateUtil;
 
-public class ContratacionDAO {
-	private static ContratacionDAO instancia = null;
+public class ServicioDAO implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private static ServicioDAO instancia = null;
 	private static SessionFactory sf = null;
 	
-	public static ContratacionDAO getInstancia(){
+	public static ServicioDAO getInstancia(){
 		if (instancia == null){
 			sf = HibernateUtil.getSessionFactory();
-			instancia = new ContratacionDAO();
+			instancia = new ServicioDAO();
 		}
 		return instancia;
 	}
 	
-	public void grabarContratacion(Contratacion contratacion) {
+	public void grabarServicio(Servicio servicio) {
 		Session session = sf.getCurrentSession();
 		session.beginTransaction();
-		session.merge(contratacion);
+		session.merge(servicio);
 		session.flush();
 		session.getTransaction().commit();
 	}
 	
-	public Contratacion getByClienteId(int idCliente) {
+	public Servicio getById(int id) {
 		Session session = sf.getCurrentSession();
 		session.beginTransaction();
-		Contratacion cont = (Contratacion) session.createQuery("FROM Contratacion CO INNER JOIN Cliente C WHERE C.id = " + idCliente).uniqueResult();
+		Servicio result = (Servicio) session.get(Servicio.class, id);
 		session.getTransaction().commit();
-		return cont;
+		return result;
 	}
-	
-	
+
 }

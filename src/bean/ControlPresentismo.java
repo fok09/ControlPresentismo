@@ -138,7 +138,7 @@ public class ControlPresentismo {
 			if (s.getNombre().equals(nombreServicio))
 			{		
 				
-				float montoFinal = s.getMonto()+(cliente.getEmpleados().size()*s.getPorcentajeEmpleado());
+				float montoFinal = s.getMonto()+(cliente.getEmpleados().size()*s.getAdicionalEmpleado());
 				
 				Contratacion c = new Contratacion(s, fechaInicial, fechaFinal, cantHoras, cliente.getEmpleados().size(), montoFinal, cliente);	
 				contrataciones.add(c);
