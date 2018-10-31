@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -50,10 +51,16 @@ public class FichadaDAO {
 	public List<Fichada> getFichadasByEmpleados(String empleados){
 		Session session = sf.openSession();
 		@SuppressWarnings("unchecked")
-			List<Fichada> list = session.createQuery("from Fichada F WHERE F.empleado in (" + empleados +")").list();
+			List<Fichada> list = session.createQuery("from Fichada F WHERE F.empleado in (" + empleados +") ").list();
 		session.close();
 		return list;
 	}
 	
-	
+	public List<Fichada> getFichadasByEmpleadosFecha(String empleados, Date fInicio, Date fFin){
+		Session session = sf.openSession();
+		@SuppressWarnings("unchecked")
+			List<Fichada> list = session.createQuery("from Fichada F WHERE F.empleado in (" + empleados +") AND F.fecha>" + fInicio.getDate() + " AND F.fecha<" + fFin.getDate()).list();
+		session.close();
+		return list;
+	}
 }

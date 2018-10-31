@@ -5,6 +5,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 import java.util.Vector;
 
+import bean.Contratacion;
 import dto.ContratacionDTO;
 import dto.ClienteDTO;
 import dto.EmpleadoDTO;
@@ -38,7 +39,7 @@ public void crearContratacion(ContratacionDTO contratacionDTO) throws RemoteExce
 	
 	public void registrarPago(int nroFactura) throws RemoteException;
 
-	public Vector<Vector<String>> getHorasTrabajadasTotales(String cuit_cuil, java.util.Date fechaInicio, java.util.Date fechaFin) throws RemoteException;
+	public Vector<Vector<String>> getHorasTrabajadasTotales(String cuit_cuil, java.util.Date fechaInicio, java.util.Date fechaFin, Contratacion c) throws RemoteException;
 
 	public List<Contratacion> getContratacionesCliente(String cuitEmpresa) throws RemoteException;
 

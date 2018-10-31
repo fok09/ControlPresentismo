@@ -140,7 +140,7 @@ public class ControlPresentismo {
 				
 				float montoFinal = s.getMonto()+(cliente.getEmpleados().size()*s.getAdicionalEmpleado());
 				
-				Contratacion c = new Contratacion(s, fechaInicial, fechaFinal, cantHoras, cliente.getEmpleados().size(), montoFinal, cliente);	
+				Contratacion c = new Contratacion(s, cliente, cantHoras, cliente.getEmpleados().size(), fechaInicial, fechaFinal,tipoFactura,  montoFinal);	
 				contrataciones.add(c);
 				
 				this.crearFactura(montoFinal, tipoFactura, cliente.getCuit_cuil());
