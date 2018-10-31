@@ -22,6 +22,10 @@ private static ServicioDAO dao;
 		return dao.getById(idServicio);
 	}
 	
+	public static Servicio getServicio(String nombreServicio){
+		return dao.getByNombre(nombreServicio);
+	}
+	
 	public static List<Servicio> getServicios(){
 		return dao.getServicios();
 	}

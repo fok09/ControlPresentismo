@@ -43,6 +43,14 @@ public class ServicioDAO implements Serializable{
 		return result;
 	}
 	
+	public Servicio getByNombre(String nombreServicio) {
+		Session session = sf.getCurrentSession();
+		session.beginTransaction();
+		Servicio servicio = (Servicio) session.createQuery("FROM Servicio E WHERE E.nombreServicio = " + nombreServicio).uniqueResult();
+		session.getTransaction().commit();
+		return servicio;
+	}
+	
 	public List<Servicio> getServicios(){
 		Session session = sf.openSession();
 		@SuppressWarnings("unchecked")
