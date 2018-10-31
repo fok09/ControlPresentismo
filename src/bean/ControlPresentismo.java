@@ -196,14 +196,14 @@ public class ControlPresentismo {
 		
 		for(Fichada f: fichadasE) {
 			//LocalTime ahora = LocalTime.of(f.getHora().getHours(), f.getHora().getMinutes());
-			contE.plusHours(f.getHora().getHours());
-			contE.plusMinutes(f.getHora().getMinutes());
+			contE.plusHours(f.getHora().getHour());
+			contE.plusMinutes(f.getHora().getMinute());
 		}
 		
 		for(Fichada f: fichadasS) {
 			//LocalTime ahora = LocalTime.of(f.getHora().getHours(), f.getHora().getMinutes());
-			contS.plusHours(f.getHora().getHours());
-			contS.plusMinutes(f.getHora().getMinutes());
+			contS.plusHours(f.getHora().getHour());
+			contS.plusMinutes(f.getHora().getMinute());
 		}
 		
 		contS.minusHours(contE.getHour());

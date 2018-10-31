@@ -1,36 +1,36 @@
 package dto;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.sql.Time;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import bean.Empleado;
 
 public class FichadaDTO implements Serializable {
 
     private static final long serialVersionUID = 324767771881426451L;
 
-	private Time hora;
+	private LocalDateTime hora;
 	private String tipo;
 	private Empleado empleado;
 	private Date fecha;
 
-    public FichadaDTO(String tipo, Empleado empleado) {
-  		super();
-		
-		this.hora.getTime();
+    public FichadaDTO(String tipo, Empleado empleado, LocalDateTime hora, Date fecha) {
+  		//super();
+		this.hora = hora;
 		this.tipo=tipo;
 		this.empleado = empleado;
-		this.fecha.getDate();
+		this.setFecha(fecha);
     }
     
     public FichadaDTO() {
     }
 
-	public Time getHora() {
+	public LocalDateTime getHora() {
 		return hora;
 	}
 
-	public void setHora(Time hora) {
+	public void setHora(LocalDateTime hora) {
 		this.hora = hora;
 	}
 
@@ -52,6 +52,14 @@ public class FichadaDTO implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
     
 }

@@ -1,7 +1,7 @@
 package bean;
 
-import java.sql.Date;
-import java.sql.Time;
+import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +18,7 @@ public class Fichada {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private Time hora;
+	private LocalDateTime hora;
 	private String tipo;
 	private Date fecha;
 	
@@ -35,19 +35,18 @@ public class Fichada {
 	private Empleado empleado;
 	
 	
+	@SuppressWarnings("deprecation")
 	public Fichada(String tipo, Empleado empleado) {
 		super();
-	
-		this.hora.getTime();
+		//this.hora.getTime();
 		this.setTipo(tipo);
-		this.empleado = empleado;
+		//this.empleado = empleado;
 		this.fecha.getDate();
 	}
 	
 	
-	public Fichada(String tipo, Empleado empleado, Time hora, Date fecha) {
-		super();
-	
+	public Fichada(String tipo, Empleado empleado, LocalDateTime hora, Date fecha) {
+		//super();
 		this.hora = hora;
 		this.setTipo(tipo);
 		this.empleado = empleado;
@@ -74,11 +73,11 @@ public class Fichada {
 		this.empleado = empleado;
 	}
 
-	public void setHora(Time hora) {
+	public void setHora(LocalDateTime hora) {
 		this.hora = hora;
 	}
 
-	public Time getHora()
+	public LocalDateTime getHora()
 	{
 		return this.hora;
 	}
