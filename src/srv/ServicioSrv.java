@@ -1,5 +1,8 @@
 package srv;
 
+import java.util.List;
+
+import bean.Cliente;
 import bean.Servicio;
 import dao.ServicioDAO;
 
@@ -17,5 +20,9 @@ private static ServicioDAO dao;
 	
 	public static Servicio getServicio(int idServicio){
 		return dao.getById(idServicio);
+	}
+	
+	public static List<Servicio> getServicios(){
+		return dao.getServicios();
 	}
 }

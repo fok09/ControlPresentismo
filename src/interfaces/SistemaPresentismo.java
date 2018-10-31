@@ -5,7 +5,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 import java.util.Vector;
 
-import bean.Contratacion;
+import dto.ContratacionDTO;
 import dto.ClienteDTO;
 import dto.EmpleadoDTO;
 import dto.FacturaDTO;
@@ -19,7 +19,7 @@ public interface SistemaPresentismo extends Remote {
 	public void crearClienteJuridico(PersonaJuridicaDTO personaJuridicaDTO) throws RemoteException;
 
 	public void crearClienteFisico(PersonaFisicaDTO personaFisicaDTO) throws RemoteException;
-
+	
 	public void eliminarCliente(String cuit_cuil) throws RemoteException;
 	
 	public void modificarCliente(ClienteDTO clienteDTO) throws RemoteException;
@@ -29,6 +29,8 @@ public interface SistemaPresentismo extends Remote {
 	public void altaFichada(FichadaDTO fichadaDTO) throws RemoteException;
 	
 	public void crearFactura(FacturaDTO facturaDTO) throws RemoteException;
+	
+public void crearContratacion(ContratacionDTO contratacionDTO) throws RemoteException;
 	
 //	public void crearFacturaSemanal(FacturaDTO facturaDTO) throws RemoteException;
 //	
