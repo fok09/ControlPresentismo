@@ -22,7 +22,7 @@ public interface SistemaPresentismo extends Remote {
 	
 	public void modificarCliente(ClienteDTO clienteDTO) throws RemoteException;
 	
-	public void agregarEmpleado(EmpleadoDTO empleadoDTO) throws RemoteException;
+	public void agregarEmpleado(EmpleadoDTO empleadoDTO, String cuit_cuil) throws RemoteException;
 	
 	public void altaFichada(FichadaDTO fichadaDTO) throws RemoteException;
 	
