@@ -32,6 +32,7 @@ public class EmpleadoDAO implements Serializable{
 		session.merge(empleado);
 		session.flush();
 		session.getTransaction().commit();
+		session.close();
 	}
 	
 	public void grabarEmpleados (List<Empleado> empleados){
