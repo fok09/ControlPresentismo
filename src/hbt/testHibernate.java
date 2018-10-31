@@ -59,7 +59,7 @@ public class testHibernate {
 		List<Fichada> fichadas = new ArrayList<Fichada>();
 		java.util.Date fechaInicio = new GregorianCalendar(2018, 9, 1).getTime();
 		java.util.Date fechaFin = new GregorianCalendar(2018, 9, 30).getTime();
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //		Fichada fichi1 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,28));
 //		Fichada fichi2 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(18, 0, 0), new Date(2018,10,28));
 //		Fichada fichi3 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,29));
@@ -75,37 +75,37 @@ public class testHibernate {
 //		FichadaSrv.grabarFichada(fichi6);
 //		
 		List<Fichada> mostrarFichadas = new ArrayList<Fichada>();
-		mostrarFichadas = FichadaSrv.getFichadasByCliente(ClienteSrv.getClienteByCuit(cliente2.getCuit_cuil()));
-=======
-		Fichada fichi1 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,28));
-		Fichada fichi2 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(18, 0, 0), new Date(2018,10,28));
-		Fichada fichi3 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,29));
-		Fichada fichi4 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(17, 0, 0), new Date(2018,10,29));
-		Fichada fichi5 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,30));
-		Fichada fichi6 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(16, 0, 0), new Date(2018,10,30));
+//		mostrarFichadas = FichadaSrv.getFichadasByCliente(ClienteSrv.getClienteByCuit(cliente2.getCuit_cuil()));
+//=======
+//		Fichada fichi1 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,28));
+//		Fichada fichi2 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(18, 0, 0), new Date(2018,10,28));
+//		Fichada fichi3 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,29));
+//		Fichada fichi4 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(17, 0, 0), new Date(2018,10,29));
+//		Fichada fichi5 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,30));
+//		Fichada fichi6 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(16, 0, 0), new Date(2018,10,30));
 		
-		FichadaSrv.grabarFichada(fichi1);
-		FichadaSrv.grabarFichada(fichi2);
-		FichadaSrv.grabarFichada(fichi3);
-		FichadaSrv.grabarFichada(fichi4);
-		FichadaSrv.grabarFichada(fichi5);
-		FichadaSrv.grabarFichada(fichi6);
-		
+//		FichadaSrv.grabarFichada(fichi1);
+//		FichadaSrv.grabarFichada(fichi2);
+//		FichadaSrv.grabarFichada(fichi3);
+//		FichadaSrv.grabarFichada(fichi4);
+//		FichadaSrv.grabarFichada(fichi5);
+//		FichadaSrv.grabarFichada(fichi6);
+//		
 //		List<Fichada> mostrarFichadas = new ArrayList<Fichada>();
 //		mostrarFichadas = FichadaSrv.getFichadasByCliente(ClienteSrv.getClienteByCuit(cliente2.getCuit_cuil()));
 //		
 //		for (Fichada f : mostrarFichadas) {
 //		    System.out.println(""+f.getId()+" - "+f.getTipo());
 //		}
->>>>>>> refs/remotes/origin/master
+//>>>>>>> refs/remotes/origin/master
 		
-		Servicio s1 = new Servicio("Mensual",1000,50);
-		Servicio s2 = new Servicio("Semanal",700,60);
-		Servicio s3 = new Servicio("Eventual",500,65);
-		
-		ServicioSrv.grabarServicio(s1);
-		ServicioSrv.grabarServicio(s2);
-		ServicioSrv.grabarServicio(s3);
+//		Servicio s1 = new Servicio("Mensual",1000,50);
+//		Servicio s2 = new Servicio("Semanal",700,60);
+//		Servicio s3 = new Servicio("Eventual",500,65);
+//		
+//		ServicioSrv.grabarServicio(s1);
+//		ServicioSrv.grabarServicio(s2);
+//		ServicioSrv.grabarServicio(s3);
 		
 		Date fi= new GregorianCalendar(2018,9,1).getTime();
 		Date ff= new GregorianCalendar(2018,9,31).getTime();
@@ -114,8 +114,8 @@ public class testHibernate {
 		s2 = ServicioSrv.getServicio(2);
 		s3 = ServicioSrv.getServicio(3);
 		
-		Contratacion c1 = new Contratacion(s1,fi ,ff , 200, 50, 0,cliente1);
-		ContratacionSrv.grabarContratacion(c1);
+//		Contratacion c1 = new Contratacion(s1,fi ,ff , 200, 50, 0,cliente1);
+//		ContratacionSrv.grabarContratacion(c1);
 	}
 
 }

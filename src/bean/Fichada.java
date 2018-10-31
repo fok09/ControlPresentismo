@@ -45,7 +45,7 @@ public class Fichada {
 	}
 	
 	
-	public Fichada(String tipo, Empleado empleado, LocalDateTime hora, Date date) {
+	public Fichada(String tipo, Empleado empleado, LocalDateTime hora, Date fecha) {
 		//super();
 		this.hora = hora;
 		this.setTipo(tipo);

@@ -1,5 +1,6 @@
 package dto;
 
+import java.util.Calendar;
 import java.util.Date;
 import bean.Cliente;
 import bean.Contratacion;
@@ -8,7 +9,6 @@ public class FacturaDTO {
 	
     private static final long serialVersionUID = 304167071881426451L;
     
-    private int id;
 	private int nroFactura;
 	private float monto;
 	private Date fecha;
@@ -18,9 +18,8 @@ public class FacturaDTO {
 	private Cliente cliente;
 	private Contratacion contratacion;
 	
-	public FacturaDTO(int  id, int nroFactura, float monto, Date fecha, String tipo, boolean pagado, Date fechaPago,
+	public FacturaDTO(int nroFactura, float monto, Date fecha, String tipo, boolean pagado, Date fechaPago,
 			Cliente cliente, Contratacion contratacion) {
-		this.id = id;
 		this.nroFactura = nroFactura;
 		this.monto = monto;
 		this.fecha = fecha;
@@ -30,7 +29,15 @@ public class FacturaDTO {
 		this.cliente = cliente;
 		this.contratacion = contratacion;
 	}
-	
+
+	public FacturaDTO(float monto, String tipo, Cliente cliente, Contratacion contratacion) {
+		this.monto = monto;
+		this.fecha = Calendar.getInstance().getTime();
+		this.tipo = tipo;
+		this.pagado = false;
+		this.cliente = cliente;
+		this.contratacion = contratacion;
+	}
 	public FacturaDTO() {
 	}
 
@@ -102,13 +109,6 @@ public class FacturaDTO {
 		this.contratacion = contratacion;
 	}
 
-	public int getId() {
-		return id;
-	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-	
 
 }

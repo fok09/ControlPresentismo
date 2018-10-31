@@ -13,8 +13,12 @@ private static ContratacionDAO dao;
 		dao = ContratacionDAO.getInstancia();
 	}
 	
-	public static void grabarContratacion(Contratacion contratacion){
-		dao.grabarContratacion(contratacion);
+	public static int grabarContratacion(Contratacion contratacion){
+		return dao.grabarContratacion(contratacion);
+	}
+	
+	public static Contratacion getById(int c){
+		return dao.getById(c);
 	}
 	
 	public static Contratacion getContratacionByCliente(Cliente cliente){

@@ -20,6 +20,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import srv.FacturaSrv;
+
 @Entity
 @Table(name = "cliente")
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
@@ -96,15 +98,15 @@ public class Cliente implements Serializable {
 		
 	}
 	
-	public Factura buscarFactura(int nroFactura) {
-		
-		
-		for (Factura f: facturas)
-			if (f.getNroFactura() == nroFactura)
-				return f;
-		return null;
-		
-	}
+//	public Factura buscarFactura(int nroFactura) {
+//		
+//		return FacturaSrv.getFacturaByNro(nroFactura);
+////		for (Factura f: facturas)
+////			if (f.getNroFactura() == nroFactura)
+////				return f;
+////		return null;
+//		
+//	}
 	
 	
 	//gets and sets

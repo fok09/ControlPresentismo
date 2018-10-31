@@ -109,20 +109,20 @@ public class ControlPresentismo {
 			}	
 	}
 	
-	public void crearFactura(float monto, String tipoFactura, String cuit_cuil){
-		
-		Cliente cliente = null;
-		
-		for(Cliente c : this.clientes) {
-			if(c.getCuit_cuil().equals(cuit_cuil)) {		
-				cliente = c;
-			}
-		}
-	
-		Factura f = new Factura(monto, tipoFactura, cliente);
-		this.facturas.add(f);
-	
-	}	
+//	public void crearFactura(float monto, String tipoFactura, String cuit_cuil){
+//		
+//		Cliente cliente = null;
+//		
+//		for(Cliente c : this.clientes) {
+//			if(c.getCuit_cuil().equals(cuit_cuil)) {		
+//				cliente = c;
+//			}
+//		}
+//	
+//		//Factura f = new Factura(monto, tipoFactura, cliente);
+//		//this.facturas.add(f);
+//	
+//	}	
 	
 	public void crearServicio(String nombreServicio, float monto,  float porcentajeEmpleado) {
 		
@@ -130,25 +130,25 @@ public class ControlPresentismo {
 		this.servicios.add(s);
 		
 	}
-	
-	public void crearContratacion(String nombreServicio, Cliente cliente, int cantHoras,
-			Date fechaInicial, Date fechaFinal, String tipoFactura) {
-		
-		for (Servicio s: servicios) {
-			if (s.getNombre().equals(nombreServicio))
-			{		
-				
-				float montoFinal = s.getMonto()+(cliente.getEmpleados().size()*s.getAdicionalEmpleado());
-				
-				Contratacion c = new Contratacion(s, cliente, cantHoras, cliente.getEmpleados().size(), fechaInicial, fechaFinal,tipoFactura,  montoFinal);	
-				contrataciones.add(c);
-				
-				this.crearFactura(montoFinal, tipoFactura, cliente.getCuit_cuil());
-				
-			}
-		}
-		
-	}
+//	
+//	public void crearContratacion(String nombreServicio, Cliente cliente, int cantHoras,
+//			Date fechaInicial, Date fechaFinal, String tipoFactura) {
+//		
+//		for (Servicio s: servicios) {
+//			if (s.getNombre().equals(nombreServicio))
+//			{		
+//				
+//				float montoFinal = s.getMonto()+(cliente.getEmpleados().size()*s.getAdicionalEmpleado());
+//				
+//				Contratacion c = new Contratacion(s, cliente, cantHoras, cliente.getEmpleados().size(), fechaInicial, fechaFinal,tipoFactura,  montoFinal);	
+//				contrataciones.add(c);
+//				
+//				this.crearFactura(montoFinal, tipoFactura, cliente.getCuit_cuil());
+//				
+//			}
+//		}
+//		
+//	}
 	
 		
 	public void registrarPago(int nroFactura) {

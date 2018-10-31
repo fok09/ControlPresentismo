@@ -41,10 +41,10 @@ public class Contratacion implements Serializable{
 		
 	}
 	
-	public Contratacion(Date fechaInicial, Date fechaFinal, int cantHoras, float montoFinal, Cliente cliente) {
-		
-	}
-	
+//	public Contratacion(Date fechaInicial, Date fechaFinal, int cantHoras, float montoFinal, Cliente cliente) {
+//		
+//	}
+//	
 	
 	public Contratacion(Servicio servicio, Cliente cliente, int cantHoras, int cantEmpleados,
     		Date fechaInicial, Date fechaFinal, String tipoFactura, float monto) {

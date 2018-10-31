@@ -1,8 +1,10 @@
 package bean;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,6 +31,7 @@ public class Factura implements Serializable {
 	private float monto;
 	private Date fecha;
 	private String tipo;
+	@Column(name="pagado",columnDefinition="INT(1)")
 	private boolean pagado;
 	private Date fechaPago;
 
@@ -46,12 +49,22 @@ public class Factura implements Serializable {
 	}
 
 	// constructor
-	public Factura(float monto, String tipo, Cliente cliente) {
+//	public Factura(float monto, String tipo, Cliente cliente) {
+//		this.monto = monto;
+//		this.fecha.getDate();
+//		this.tipo = tipo;
+//		this.pagado = false; // cuando se crea la factura figura como impago
+//		this.cliente = cliente;
+//	}
+	
+
+	public Factura(float monto, String tipo, Cliente cliente, Contratacion contratacion) {
 		this.monto = monto;
-		this.fecha.getDate();
+		this.fecha = Calendar.getInstance().getTime();
 		this.tipo = tipo;
-		this.pagado = false; // cuando se crea la factura figura como impago
+		this.pagado = false;
 		this.cliente = cliente;
+		this.contratacion = contratacion;
 	}
 	
 	//gets and sets
