@@ -2,8 +2,10 @@ package interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.List;
 import java.util.Vector;
 
+import bean.Contratacion;
 import dto.ClienteDTO;
 import dto.EmpleadoDTO;
 import dto.FacturaDTO;
@@ -35,6 +37,8 @@ public interface SistemaPresentismo extends Remote {
 	public void registrarPago(int nroFactura) throws RemoteException;
 
 	public Vector<Vector<String>> getHorasTrabajadasTotales(String cuit_cuil, java.util.Date fechaInicio, java.util.Date fechaFin) throws RemoteException;
+
+	public List<Contratacion> getContratacionesCliente(String cuitEmpresa) throws RemoteException;
 
 		
 //	public void crearClienteJuridico(String cuit_cuil, String domicilio, String telefono, String mail,

@@ -1,8 +1,11 @@
 package dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import bean.Cliente;
 import bean.Contratacion;
 import hbt.HibernateUtil;
 
@@ -34,5 +37,20 @@ public class ContratacionDAO {
 		return cont;
 	}
 	
+	public List<Contratacion> getContratacionesByClienteId(int idCliente){
+		Session session = sf.openSession();
+		@SuppressWarnings("unchecked")
+		List<Contratacion> list = session.createQuery("FROM Contratacion").list();
+		session.close();
+		return list;
+	}
+	
+	public List<Contratacion> getContrataciones(){
+		Session session = sf.openSession();
+		@SuppressWarnings("unchecked")
+		List<Contratacion> list = session.createQuery("FROM Contratacion").list();
+		session.close();
+		return list;
+	}
 	
 }
