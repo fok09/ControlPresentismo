@@ -1,17 +1,21 @@
 package hbt;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 import bean.Cliente;
+import bean.Contratacion;
 import bean.Empleado;
 import bean.Fichada;
 import bean.PersonaFisica;
+import bean.Servicio;
 import srv.ClienteSrv;
+import srv.ContratacionSrv;
 import srv.FichadaSrv;
+import srv.ServicioSrv;
 
 public class testHibernate {
 
@@ -62,14 +66,30 @@ public class testHibernate {
 		FichadaSrv.grabarFichada(fichi5);
 		FichadaSrv.grabarFichada(fichi6);
 		
-		List<Fichada> mostrarFichadas = new ArrayList<Fichada>();
-		mostrarFichadas = FichadaSrv.getFichadasByCliente(ClienteSrv.getClienteByCuit(cliente2.getCuit_cuil()));
+//		List<Fichada> mostrarFichadas = new ArrayList<Fichada>();
+//		mostrarFichadas = FichadaSrv.getFichadasByCliente(ClienteSrv.getClienteByCuit(cliente2.getCuit_cuil()));
+//		
+//		for (Fichada f : mostrarFichadas) {
+//		    System.out.println(""+f.getId()+" - "+f.getTipo());
+//		}
 		
-		for (Fichada f : mostrarFichadas) {
-		    System.out.println(""+f.getId()+" - "+f.getTipo());
-		}
+		Servicio s1 = new Servicio("Mensual",1000,50);
+		Servicio s2 = new Servicio("Semanal",700,60);
+		Servicio s3 = new Servicio("Eventual",500,65);
 		
+		ServicioSrv.grabarServicio(s1);
+		ServicioSrv.grabarServicio(s2);
+		ServicioSrv.grabarServicio(s3);
 		
+		Date fi= new GregorianCalendar(2018,9,1).getTime();
+		Date ff= new GregorianCalendar(2018,9,31).getTime();
+		
+		s1 = ServicioSrv.getServicio(1);
+		s2 = ServicioSrv.getServicio(2);
+		s3 = ServicioSrv.getServicio(3);
+		
+		Contratacion c1 = new Contratacion(s1,fi ,ff , 200, 50, 0,cliente1);
+		ContratacionSrv.grabarContratacion(c1);
 	}
 
 }
