@@ -30,11 +30,12 @@ public class Contratacion implements Serializable{
 	private Cliente cliente;
 	
 	
-	private Date fechaInicial;
-	private Date fechaFinal;
-	private int cantHoras;
-	private int cantEmpleados;
-	private float montoFinal;
+    private int cantHoras;
+    private int cantEmpleados;
+    private Date fechaInicial;
+    private Date fechaFinal;
+    private String tipoFactura;
+	private float monto;
 	
 	public Contratacion() {
 		
@@ -45,14 +46,16 @@ public class Contratacion implements Serializable{
 	}
 	
 	
-	public Contratacion(Servicio servicio, Date fechaInicial, Date fechaFinal, int cantHoras, int cantEmpleados, float montoFinal, Cliente cliente) {
+	public Contratacion(Servicio servicio, Cliente cliente, int cantHoras, int cantEmpleados,
+    		Date fechaInicial, Date fechaFinal, String tipoFactura, float monto) {
 		this.servicio = servicio;
-		this.fechaInicial = fechaInicial;
-		this.fechaFinal = fechaFinal;
-		this.cantHoras = cantHoras;
-		this.cantEmpleados = cantEmpleados;
-		this.montoFinal = montoFinal;
-		this.cliente = cliente;
+    	this.cliente = cliente;
+    	this.cantHoras = cantHoras;
+    	this.cantEmpleados = cantEmpleados;
+    	this.fechaInicial = fechaInicial;
+    	this.fechaFinal = fechaFinal;
+    	this.tipoFactura = tipoFactura;
+    	this.monto = monto;
 	}
 
 	public int getId() {
@@ -111,13 +114,23 @@ public class Contratacion implements Serializable{
 		this.cantEmpleados = cantEmpleados;
 	}
 
-	public float getMontoFinal() {
-		return montoFinal;
+	public String getTipoFactura() {
+		return tipoFactura;
 	}
 
-	public void setMontoFinal(float montoFinal) {
-		this.montoFinal = montoFinal;
+	public void setTipoFactura(String tipoFactura) {
+		this.tipoFactura = tipoFactura;
 	}
+
+	public float getMonto() {
+		return monto;
+	}
+
+	public void setMonto(float monto) {
+		this.monto = monto;
+	}
+
+
 
 
 }

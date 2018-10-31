@@ -22,4 +22,8 @@ private static FacturaDAO dao;
 	public static List<Factura> getFacturasByCliente(int idCliente){
 		return dao.getFacturasByCliente(idCliente);
 	}
+	
+	public static Factura getFacturaByNro(int nroFac) {
+		return dao.getFacturaByNro(nroFac);
+	}
 }

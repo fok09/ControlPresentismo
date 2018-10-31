@@ -1,10 +1,12 @@
 package dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import bean.Cliente;
 import bean.Servicio;
 import hbt.HibernateUtil;
 
@@ -39,6 +41,14 @@ public class ServicioDAO implements Serializable{
 		Servicio result = (Servicio) session.get(Servicio.class, id);
 		session.getTransaction().commit();
 		return result;
+	}
+	
+	public List<Servicio> getServicios(){
+		Session session = sf.openSession();
+		@SuppressWarnings("unchecked")
+		List<Servicio> list = session.createQuery("from Servicio").list();
+		session.close();
+		return list;
 	}
 
 }

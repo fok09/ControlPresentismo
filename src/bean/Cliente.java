@@ -96,6 +96,16 @@ public class Cliente implements Serializable {
 		
 	}
 	
+	public Factura buscarFactura(int nroFactura) {
+		
+		
+		for (Factura f: facturas)
+			if (f.getNroFactura() == nroFactura)
+				return f;
+		return null;
+		
+	}
+	
 	
 	//gets and sets
 	public int getId() {
