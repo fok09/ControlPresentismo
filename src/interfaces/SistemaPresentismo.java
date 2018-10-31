@@ -5,6 +5,7 @@ import java.rmi.RemoteException;
 import java.util.List;
 import java.util.Vector;
 
+import bean.Contratacion;
 import dto.ContratacionDTO;
 import dto.ClienteDTO;
 import dto.EmpleadoDTO;

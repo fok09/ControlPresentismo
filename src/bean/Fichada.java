@@ -1,7 +1,7 @@
 package bean;
 
-import java.util.Date;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -45,7 +45,7 @@ public class Fichada {
 	}
 	
 	
-	public Fichada(String tipo, Empleado empleado, Time hora, Date date) {
+	public Fichada(String tipo, Empleado empleado, LocalDateTime hora, Date date) {
 		//super();
 		this.hora = hora;
 		this.setTipo(tipo);
