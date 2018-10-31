@@ -57,20 +57,20 @@ public class testHibernate {
 		List<Fichada> fichadas = new ArrayList<Fichada>();
 		java.util.Date fechaInicio = new GregorianCalendar(2018, 9, 1).getTime();
 		java.util.Date fechaFin = new GregorianCalendar(2018, 9, 30).getTime();
-		Fichada fichi1 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,28));
-		Fichada fichi2 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(18, 0, 0), new Date(2018,10,28));
-		Fichada fichi3 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,29));
-		Fichada fichi4 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(17, 0, 0), new Date(2018,10,29));
-		Fichada fichi5 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,30));
-		Fichada fichi6 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(16, 0, 0), new Date(2018,10,30));
-		
-		FichadaSrv.grabarFichada(fichi1);
-		FichadaSrv.grabarFichada(fichi2);
-		FichadaSrv.grabarFichada(fichi3);
-		FichadaSrv.grabarFichada(fichi4);
-		FichadaSrv.grabarFichada(fichi5);
-		FichadaSrv.grabarFichada(fichi6);
-		
+//		Fichada fichi1 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,28));
+//		Fichada fichi2 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(18, 0, 0), new Date(2018,10,28));
+//		Fichada fichi3 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,29));
+//		Fichada fichi4 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(17, 0, 0), new Date(2018,10,29));
+//		Fichada fichi5 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,30));
+//		Fichada fichi6 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(16, 0, 0), new Date(2018,10,30));
+//		
+//		FichadaSrv.grabarFichada(fichi1);
+//		FichadaSrv.grabarFichada(fichi2);
+//		FichadaSrv.grabarFichada(fichi3);
+//		FichadaSrv.grabarFichada(fichi4);
+//		FichadaSrv.grabarFichada(fichi5);
+//		FichadaSrv.grabarFichada(fichi6);
+//		
 		List<Fichada> mostrarFichadas = new ArrayList<Fichada>();
 		mostrarFichadas = FichadaSrv.getFichadasByCliente(ClienteSrv.getClienteByCuit(cliente2.getCuit_cuil()));
 		
