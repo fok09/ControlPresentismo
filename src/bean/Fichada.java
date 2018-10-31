@@ -1,6 +1,6 @@
 package bean;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Time;
 
 import javax.persistence.Entity;
@@ -45,13 +45,13 @@ public class Fichada {
 	}
 	
 	
-	public Fichada(String tipo, Empleado empleado, Time hora, Date fecha) {
+	public Fichada(String tipo, Empleado empleado, Time hora, Date date) {
 		super();
 	
 		this.hora = hora;
 		this.setTipo(tipo);
 		this.empleado = empleado;
-		this.fecha = fecha;
+		this.fecha = date;
 	}
 
 	public Fichada() {
