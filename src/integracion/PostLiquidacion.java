@@ -10,16 +10,28 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import bean.Empleado;
+//import bean.Empleado;
 
 
 public class PostLiquidacion {
 
-	public PostLiquidacion(Empleado em) throws JSONException {
+	public static void main(String[] args) {
+		PostLiquidacion p = new PostLiquidacion();
+	}
+	
+	public PostLiquidacion() throws JSONException {
 		JSONObject json = new JSONObject();
 
-		json.accumulate("update", "worked_hours");
-		json.accumulate("mount", "Contidad de Horas");
+		if ("mensual".equals("mensual") == true){
+			
+			json.accumulate("update", "absense_days");
+			json.accumulate("mount", "1");
+			
+		}else if ("tipo".equals("hora") == true) {
+			json.accumulate("update", "worked_hours");
+			json.accumulate("mount", "10");
+		}
+		
 		
 		System.out.println(json.toString());
 
@@ -28,7 +40,7 @@ public class PostLiquidacion {
 		try {
 			entity = new StringEntity(json.toString());
 			HttpClient httpClient = HttpClientBuilder.create().build();
-			HttpPost request = new HttpPost("https://sueldosya.herokuapp.com/update/clientCUIT/employeeDNI");
+			HttpPost request = new HttpPost("https://sueldosya.herokuapp.com/update/30715087738/8983298");
 			request.setHeader("Accept", "application/json");
 			request.setHeader("Content-type", "application/json");
 			request.setEntity(entity);
