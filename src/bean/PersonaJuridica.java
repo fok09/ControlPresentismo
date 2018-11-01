@@ -20,15 +20,15 @@ public class PersonaJuridica extends Cliente implements Serializable{
 		
 	}
 
-	public PersonaJuridica(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada,
+	public PersonaJuridica(String cuit_cuil, String cbu, String domicilio, String telefono, String mail, Time horaEntrada,
 			Time horaSalida, List<Empleado> empleados, String razonSocial) {
-		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, empleados);
+		super(cuit_cuil, cbu, domicilio, telefono, mail, horaEntrada, horaSalida, empleados);
 		this.razonSocial = razonSocial;
 	}
 	
-	public PersonaJuridica(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada,
+	public PersonaJuridica(String cuit_cuil, String cbu, String domicilio, String telefono, String mail, Time horaEntrada,
 			Time horaSalida, String razonSocial) {
-		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
+		super(cuit_cuil, cbu, domicilio, telefono, mail, horaEntrada, horaSalida);
 		this.razonSocial = razonSocial;
 	}
 	
