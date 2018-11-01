@@ -2,9 +2,7 @@ package bean;
 
 import java.sql.Date;
 import java.sql.Time;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.*;
+import java.util.Vector;
 
 public class ControlPresentismo {
 	

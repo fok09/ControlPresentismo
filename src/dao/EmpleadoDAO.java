@@ -6,7 +6,6 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import bean.Cliente;
 import bean.Empleado;
 import hbt.HibernateUtil;
 

@@ -20,8 +20,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import srv.FacturaSrv;
-
 @Entity
 @Table(name = "cliente")
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
