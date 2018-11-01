@@ -1,9 +1,7 @@
 package srv;
 
-import java.util.List;
 import java.util.Vector;
 
-import bean.Cliente;
 import bean.Empleado;
 import dao.EmpleadoDAO;
 
