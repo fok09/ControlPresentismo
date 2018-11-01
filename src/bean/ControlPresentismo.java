@@ -2,9 +2,7 @@ package bean;
 
 import java.sql.Date;
 import java.sql.Time;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.*;
+import java.util.Vector;
 
 public class ControlPresentismo {
 	
@@ -90,11 +88,11 @@ public class ControlPresentismo {
 		}		
 	}
 	
-	public void agregarEmpleado(String cuit_cuil, String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac, String legajo) {
+	public void agregarEmpleado(String cuit_cuil, String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac, String legajo, String tipo, int cantHorasMensual) {
 		
 		for(Cliente c : this.clientes) {
 			if(c.getCuit_cuil().equals(cuit_cuil)) {		
-				c.agregarEmpleado(nombre, apellido, mail, dni, telefono, fechaNac, legajo);
+				c.agregarEmpleado(nombre, apellido, mail, dni, telefono, fechaNac, legajo, tipo, cantHorasMensual);
 			}
 		}
 		

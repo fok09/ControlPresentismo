@@ -2,9 +2,7 @@ package dto;
 
 import java.io.Serializable;
 import java.sql.Time;
-import java.util.*;
-
-import bean.Empleado;
+import java.util.Vector;
 
 public class ClienteDTO implements Serializable {
 

@@ -27,8 +27,10 @@ public class Empleado implements Serializable{
 	private String dni;
 	private String telefono;
 	private Date fechaNac;
+	private String tipo;
+	private int horasMensuales;
 	
-	public Empleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac, String legajo) {
+	public Empleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac, String legajo, String tipo, int horasMensuales) {
 		super();
 		this.legajo = legajo;
 		this.nombre = nombre;
@@ -37,6 +39,24 @@ public class Empleado implements Serializable{
 		this.dni = dni;
 		this.telefono = telefono;
 		this.fechaNac = fechaNac;
+		this.tipo = tipo;
+		this.horasMensuales = horasMensuales;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public int getHorasMensuales() {
+		return horasMensuales;
+	}
+
+	public void setHorasMensuales(int horasMensuales) {
+		this.horasMensuales = horasMensuales;
 	}
 
 	public Empleado(){

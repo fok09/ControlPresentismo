@@ -15,8 +15,10 @@ public class EmpleadoDTO implements Serializable {
 	private String telefono;
 	private Date fechaNac;
 	private String legajo;
+	private String tipo;
+	private int horasMensuales;
 
-    public EmpleadoDTO(int id, String nombre, String apellido, String mail,	String dni, String telefono, Date fechaNac, String legajo) {
+    public EmpleadoDTO(int id, String nombre, String apellido, String mail,	String dni, String telefono, Date fechaNac, String legajo, String tipo, int horasMensuales) {
         this.id = id;
     	this.nombre = nombre;
         this.apellido = apellido;
@@ -25,9 +27,11 @@ public class EmpleadoDTO implements Serializable {
         this.telefono = telefono;
         this.fechaNac = fechaNac;
         this.legajo = legajo;
+        this.tipo = tipo;
+        this.horasMensuales = horasMensuales;
     }
 
-    public EmpleadoDTO(String nombre, String apellido, String mail,	String dni, String telefono, Date fechaNac, String legajo) {
+    public EmpleadoDTO(String nombre, String apellido, String mail,	String dni, String telefono, Date fechaNac, String legajo, String tipo, int horasMensuales) {
     	this.nombre = nombre;
         this.apellido = apellido;
         this.mail = mail;
@@ -35,9 +39,27 @@ public class EmpleadoDTO implements Serializable {
         this.telefono = telefono;
         this.fechaNac = fechaNac;
         this.legajo = legajo;
+        this.tipo = tipo;
+        this.horasMensuales = horasMensuales;
     }
     
-    public EmpleadoDTO() {
+    public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public int getHorasMensuales() {
+		return horasMensuales;
+	}
+
+	public void setHorasMensuales(int horasMensuales) {
+		this.horasMensuales = horasMensuales;
+	}
+
+	public EmpleadoDTO() {
     }
 
     public static long getSerialVersionUID() {

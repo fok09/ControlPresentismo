@@ -39,9 +39,9 @@ public class testHibernate {
 		ClienteSrv.grabarCliente(cliente2);
 
 		
-		Empleado empleado1 = new Empleado("Franco","Botiuk","franco@botiuk.com","35359183","444445666", new Date(19901104),"0001");
-		Empleado empleado2 = new Empleado("Carla","Torino","carla@torino.com","4366564","8888888", new Date(19901104),"0002");
-		Empleado empleado3 = new Empleado("test","test","test@test.com","test","test", new Date(19901104), "0003");
+		Empleado empleado1 = new Empleado("Franco","Botiuk","franco@botiuk.com","35359183","444445666", new Date(19901104),"0001", "Mensual", 80);
+		Empleado empleado2 = new Empleado("Carla","Torino","carla@torino.com","4366564","8888888", new Date(19901104),"0002", "Por Hora", 25);
+		Empleado empleado3 = new Empleado("test","test","test@test.com","test","test", new Date(19901104), "0003", "Mensual", 120);
 		
 		cliente1 = ClienteSrv.getClienteByCuit(cliente1.getCuit_cuil());
 		cliente2 = ClienteSrv.getClienteByCuit(cliente2.getCuit_cuil());

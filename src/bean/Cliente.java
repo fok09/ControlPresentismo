@@ -20,8 +20,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import srv.FacturaSrv;
-
 @Entity
 @Table(name = "cliente")
 @Inheritance (strategy = InheritanceType.SINGLE_TABLE)
@@ -83,9 +81,9 @@ public class Cliente implements Serializable {
 	}
 	
 	
-	public void agregarEmpleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac, String legajo) {
+	public void agregarEmpleado(String nombre, String apellido, String mail, String dni, String telefono, Date fechaNac, String legajo, String tipo, int horasMensuales) {
 		
-		Empleado e = new Empleado(nombre, apellido, mail, dni, telefono, fechaNac, legajo);
+		Empleado e = new Empleado(nombre, apellido, mail, dni, telefono, fechaNac, legajo, tipo, horasMensuales);
 		empleados.add(e);
 	
 	}
