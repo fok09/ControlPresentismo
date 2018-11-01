@@ -11,6 +11,7 @@ public class ClienteDTO implements Serializable {
     private static final long serialVersionUID = 304767771881426451L;
 
 	protected String cuit_cuil;
+	protected String cbu;
 	protected String domicilio;
 	protected String telefono;
 	protected String mail;
@@ -19,9 +20,10 @@ public class ClienteDTO implements Serializable {
 	protected Vector<EmpleadoDTO> empleados;
 
     
-	public ClienteDTO(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida, Vector<EmpleadoDTO> empleados) {
+	public ClienteDTO(String cuit_cuil, String cbu, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida, Vector<EmpleadoDTO> empleados) {
         super();
-    		this.cuit_cuil = cuit_cuil;
+    	this.cuit_cuil = cuit_cuil;
+    	this.cbu = cbu;
         this.domicilio = domicilio;
         this.telefono = telefono;
         this.mail = mail;
@@ -34,9 +36,10 @@ public class ClienteDTO implements Serializable {
     }
 
     
-	public ClienteDTO(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida) {
+	public ClienteDTO(String cuit_cuil, String cbu, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida) {
         super();
     	this.cuit_cuil = cuit_cuil;
+    	this.cbu = cbu;
         this.domicilio = domicilio;
         this.telefono = telefono;
         this.mail = mail;
@@ -111,6 +114,14 @@ public class ClienteDTO implements Serializable {
 	
 	public void setEmpleados(Vector<EmpleadoDTO> empleados) {
 		this.empleados = empleados;
+	}
+
+	public String getCbu() {
+		return cbu;
+	}
+
+	public void setCbu(String cbu) {
+		this.cbu = cbu;
 	}
 
 

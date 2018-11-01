@@ -21,16 +21,16 @@ public PersonaFisica() {
 		
 	}
 
-	public PersonaFisica(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada,
+	public PersonaFisica(String cuit_cuil, String cbu, String domicilio, String telefono, String mail, Time horaEntrada,
 			Time horaSalida, List<Empleado> empleados, String nombre, String apellido) {
-		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, empleados);
+		super(cuit_cuil, cbu, domicilio, telefono, mail, horaEntrada, horaSalida, empleados);
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}
 	
-	public PersonaFisica(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada,
+	public PersonaFisica(String cuit_cuil, String cbu, String domicilio, String telefono, String mail, Time horaEntrada,
 			Time horaSalida, String nombre, String apellido) {
-		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
+		super(cuit_cuil, cbu, domicilio, telefono, mail, horaEntrada, horaSalida);
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}

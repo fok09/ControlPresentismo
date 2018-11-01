@@ -39,23 +39,23 @@ public class ControlPresentismo {
 		}
 	}*/
 	
-	public void crearClienteJuridico(String cuit_cuil, String domicilio, String telefono, String mail,
+	public void crearClienteJuridico(String cuit_cuil, String cbu, String domicilio, String telefono, String mail,
 			Time horaEntrada, Time horaSalida, String razonSocial) {
 		
 		for(Cliente c : this.clientes) {
 			if(!c.getCuit_cuil().equals(cuit_cuil)) {		
-					Cliente cliente = new PersonaJuridica(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, razonSocial);
+					Cliente cliente = new PersonaJuridica(cuit_cuil, cbu, domicilio, telefono, mail, horaEntrada, horaSalida, razonSocial);
 					clientes.addElement(cliente);
 			}
 		}
 	}
 	
-	public void crearClienteFisico(String cuit_cuil, String domicilio, String telefono, String mail,
+	public void crearClienteFisico(String cuit_cuil, String cbu, String domicilio, String telefono, String mail,
 			Time horaEntrada, Time horaSalida, String nombre, String apellido) {
 		
 		for(Cliente c : this.clientes) {
 			if(!c.getCuit_cuil().equals(cuit_cuil)) {		
-					Cliente cliente = new PersonaFisica(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida, nombre, apellido);
+					Cliente cliente = new PersonaFisica(cuit_cuil, cbu, domicilio, telefono, mail, horaEntrada, horaSalida, nombre, apellido);
 					clientes.addElement(cliente);
 			}
 		}
@@ -70,7 +70,7 @@ public class ControlPresentismo {
 		}
 	}
 	
-	public void modificarCliente(String cuit_cuil, String domicilio, String telefono, String mail,
+	public void modificarCliente(String cuit_cuil, String cbu, String domicilio, String telefono, String mail,
 			Time horaEntrada, Time horaSalida) {	
 		
 		Cliente cliente = null; 
@@ -79,6 +79,7 @@ public class ControlPresentismo {
 			if(c.getCuit_cuil().equals(cuit_cuil)) 
 			{		
 				cliente = c;
+				cliente.setCbu(cbu);
 				cliente.setDomicilio(domicilio);
 				cliente.setHoraEntrada(horaEntrada);
 				cliente.setHoraSalida(horaSalida);
