@@ -20,9 +20,9 @@ public class PersonaFisicaDTO extends ClienteDTO implements Serializable {
     public PersonaFisicaDTO() {
     }
 
-	public PersonaFisicaDTO(String nombre, String apellido, String cuit_cuil, String domicilio, String telefono,
+	public PersonaFisicaDTO(String nombre, String apellido, String cuit_cuil, String cbu, String domicilio, String telefono,
 			String mail, Time horaEntrada, Time horaSalida) {
-		super(cuit_cuil, domicilio, telefono, mail, horaEntrada, horaSalida);
+		super(cuit_cuil, cbu, domicilio, telefono, mail, horaEntrada, horaSalida);
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}

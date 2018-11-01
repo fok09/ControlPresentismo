@@ -38,6 +38,7 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	protected int id;
 	protected String cuit_cuil;
+	protected String cbu;
 	protected String domicilio;
 	protected String telefono;
 	protected String mail;
@@ -54,10 +55,11 @@ public class Cliente implements Serializable {
 	}
 	
 	// constructor Cliente con lista de empleados
-	public Cliente(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida,
+	public Cliente(String cuit_cuil, String cbu, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida,
 			List<Empleado> empleados) {
 		super();
 		this.cuit_cuil = cuit_cuil;
+		this.cbu = cbu;
 		this.domicilio = domicilio;
 		this.telefono = telefono;
 		this.mail = mail;
@@ -67,9 +69,10 @@ public class Cliente implements Serializable {
 	}
 
 	//constructor Cliente sin lista de empleados
-	public Cliente(String cuit_cuil, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida) {
+	public Cliente(String cuit_cuil, String cbu, String domicilio, String telefono, String mail, Time horaEntrada, Time horaSalida) {
 		super();
 		this.cuit_cuil = cuit_cuil;
+		this.cbu = cbu;
 		this.domicilio = domicilio;
 		this.telefono = telefono;
 		this.mail = mail;
@@ -95,16 +98,6 @@ public class Cliente implements Serializable {
 		return deuda;
 		
 	}
-	
-//	public Factura buscarFactura(int nroFactura) {
-//		
-//		return FacturaSrv.getFacturaByNro(nroFactura);
-////		for (Factura f: facturas)
-////			if (f.getNroFactura() == nroFactura)
-////				return f;
-////		return null;
-//		
-//	}
 	
 	
 	//gets and sets
@@ -195,5 +188,14 @@ public class Cliente implements Serializable {
 		
 		return null;
 	}
+
+	public String getCbu() {
+		return cbu;
+	}
+
+	public void setCbu(String cbu) {
+		this.cbu = cbu;
+	}
+	
 	
 }
