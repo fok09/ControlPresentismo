@@ -1,11 +1,12 @@
 package dto;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 import bean.Cliente;
 import bean.Contratacion;
 
-public class FacturaDTO {
+public class FacturaDTO implements Serializable{
 	
     private static final long serialVersionUID = 304167071881426451L;
     

@@ -16,6 +16,7 @@ private static FacturaDAO dao;
 	}
 	
 	public static void grabarFactura(Factura factura){
+		System.out.println("estado FC "+factura.getNroFactura()+" en FacturaSrv: "+factura.isPagado());
 		dao.grabarFactura(factura);
 	}
 	
