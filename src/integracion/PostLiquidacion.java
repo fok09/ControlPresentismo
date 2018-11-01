@@ -22,7 +22,7 @@ public class PostLiquidacion {
 		if (empleado.getTipo().equals("mensual") == true){
 			
 			json.accumulate("update", "absense_days");
-			json.accumulate("mount", empleado.getHorasAusentes());
+			json.accumulate("mount", empleado.getHorasAusentes()/8);
 			
 		}else if (empleado.getTipo().equals("hora") == true) {
 			json.accumulate("update", "worked_hours");
