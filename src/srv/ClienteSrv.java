@@ -43,4 +43,11 @@ private static ClienteDAO dao;
 		return dao.getClientes();
 	}
 	
+	public static List<PersonaJuridica> getClientesJuridicos(){
+		return dao.getClientesJuridicos();
+	}
+	
+	public static PersonaJuridica getPersonaJuridicaByIdCliente(int idCliente){
+		return dao.getPersonaJuridicaByIdCliente(idCliente);
+	}
 }
