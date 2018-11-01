@@ -29,12 +29,12 @@ public class testHibernate {
 		ServicioSrv.grabarServicio(s2);
 		ServicioSrv.grabarServicio(s3);
 		
-		PersonaFisica PJ = new PersonaFisica("1111", "domicilio", "telefono", "mail", new Time(System.currentTimeMillis()), new Time(System.currentTimeMillis()),"nombre","apel");
+		PersonaFisica PJ = new PersonaFisica("1111", "domicilio", "cbu", "telefono", "mail", new Time(System.currentTimeMillis()), new Time(System.currentTimeMillis()),"nombre","apel");
 		ClienteSrv.grabarPersonaFisica(PJ);
 		
 		
-		Cliente cliente1 = new Cliente("2222","Pasteur 555", "34343443","mail@mail.com",new Time(System.currentTimeMillis()),new Time(System.currentTimeMillis()+3));
-		Cliente cliente2 = new Cliente("3333","Lima 717", "4534534","test@test.com",new Time(System.currentTimeMillis()),new Time(System.currentTimeMillis()+3));
+		Cliente cliente1 = new Cliente("2222","Pasteur 555", "12345","34343443","mail@mail.com",new Time(System.currentTimeMillis()),new Time(System.currentTimeMillis()+3));
+		Cliente cliente2 = new Cliente("3333","Lima 717","54321", "4534534","test@test.com",new Time(System.currentTimeMillis()),new Time(System.currentTimeMillis()+3));
 		ClienteSrv.grabarCliente(cliente1);
 		ClienteSrv.grabarCliente(cliente2);
 
