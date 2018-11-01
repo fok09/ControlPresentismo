@@ -26,6 +26,7 @@ public class FacturaDAO {
 		session.merge(factura);
 		session.flush();
 		session.getTransaction().commit();
+		System.out.println("FACTURA EN EL DAO ESTA PAGADA?: "+factura.isPagado());
 	}
 	
 	public void grabarFacturas (List<Factura> facturas){
