@@ -2,7 +2,6 @@ package srv;
 
 import java.util.List;
 
-import bean.Cliente;
 import bean.Servicio;
 import dao.ServicioDAO;
 

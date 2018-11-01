@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Vector;
 
 import bean.Contratacion;
-import dto.ContratacionDTO;
 import dto.ClienteDTO;
+import dto.ContratacionDTO;
 import dto.EmpleadoDTO;
 import dto.FacturaDTO;
 import dto.FichadaDTO;

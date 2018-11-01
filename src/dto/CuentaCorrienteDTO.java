@@ -1,7 +1,8 @@
 package dto;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.Vector;
+
 import bean.Cliente;
 
 public class CuentaCorrienteDTO implements Serializable {
