@@ -1,6 +1,7 @@
 package srv;
 
 import java.util.List;
+import java.util.Vector;
 
 import bean.Cliente;
 import bean.PersonaFisica;
@@ -45,6 +46,10 @@ private static ClienteDAO dao;
 	
 	public static List<PersonaJuridica> getClientesJuridicos(){
 		return dao.getClientesJuridicos();
+	}
+	
+	public static List<PersonaFisica> getClientesFisicos(){
+		return dao.getClientesFisicos();
 	}
 	
 	public static PersonaJuridica getPersonaJuridicaByIdCliente(int idCliente){

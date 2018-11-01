@@ -98,6 +98,14 @@ public class ClienteDAO implements Serializable{
 		session.close();
 		return list;
 	}
+	
+	public List<PersonaFisica> getClientesFisicos(){
+		Session session = sf.openSession();
+		@SuppressWarnings("unchecked")
+		List<PersonaFisica> list = session.createQuery("from Cliente").list();
+		session.close();
+		return list;
+	}
 
 	public PersonaJuridica getPersonaJuridicaByIdCliente(int idCliente) {
 		Session session = sf.getCurrentSession();

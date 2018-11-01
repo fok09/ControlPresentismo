@@ -8,7 +8,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("Fisica")
+@DiscriminatorValue(value="Fisica")
 public class PersonaFisica extends Cliente implements Serializable{
 	/**
 	 * 
@@ -46,6 +46,12 @@ public PersonaFisica() {
 	}
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+	
+	@Override
+	public String toString() {
+		return this.getCuit_cuil()+" - "+this.getApellido()+", "+this.getNombre();
+		
 	}
 	
 

@@ -8,7 +8,7 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("Juridica")
+@DiscriminatorValue(value="Juridica")
 public class PersonaJuridica extends Cliente implements Serializable{
 	/**
 	 * 
@@ -41,5 +41,10 @@ public class PersonaJuridica extends Cliente implements Serializable{
 		this.razonSocial = razonSocial;
 	}
 	
+	@Override
+	public String toString() {
+		return this.getCuit_cuil()+" - "+this.getRazonSocial();
+		
+	}
 	
 }
