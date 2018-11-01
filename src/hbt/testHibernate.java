@@ -14,6 +14,7 @@ public class testHibernate {
 		ServicioSrv.grabarServicio(s1);
 		ServicioSrv.grabarServicio(s2);
 		ServicioSrv.grabarServicio(s3);
+
 	}
 
 }
