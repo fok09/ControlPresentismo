@@ -31,7 +31,7 @@ public class Factura implements Serializable {
 	private float monto;
 	private Date fecha;
 	private String tipo;
-	//@Column(name="pagado",columnDefinition="INT(1)")
+	@Column(name="pagado",columnDefinition="TINYINT(1)")
 	private boolean pagado;
 	private Date fechaPago;
 
