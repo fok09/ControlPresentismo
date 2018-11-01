@@ -36,7 +36,8 @@ public class ReporteBancoDTO {
 		
 		for (Factura f : facturas) 
 		{
-			
+			if (f.getFechaPago()!=null)
+			{
 			Instant i = f.getFechaPago().toInstant();	//Convierto la fecha de la factura en tipo LocalDate	
 			ZonedDateTime z = i.atZone(ZoneId.systemDefault());
 			LocalDate fechaPagoFactura = z.toLocalDate();
@@ -46,6 +47,7 @@ public class ReporteBancoDTO {
 			if(mesActual == mesDelPago)
 				totalFacturas = totalFacturas + f.getMonto();
 			
+			}
 		}
 		
 		return totalFacturas;

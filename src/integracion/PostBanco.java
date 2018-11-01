@@ -23,11 +23,11 @@ import org.json.JSONObject;
 				
 				JSONObject json = new JSONObject();
 			
-				json.accumulate("CBU", CBU);
-				json.accumulate("CBUCliente", CBUCliente);		
-				json.accumulate("MontoFacturado", montoFactura);
-				json.accumulate("FechaFacturado", fecha);
-				json.accumulate("DetalleFactura", "Honorarios");
+				json.accumulate("origen", CBU);
+				json.accumulate("destino", CBUCliente);		
+				json.accumulate("monto", montoFactura);
+				json.accumulate("fecha", fecha);
+				json.accumulate("descripcion", "Honorarios");
 
 		
 				System.out.println(json.toString());
@@ -37,7 +37,7 @@ import org.json.JSONObject;
 				try {
 					entity = new StringEntity(json.toString(), "UTF-8");
 					HttpClient httpClient = HttpClientBuilder.create().build();
-					HttpPost request = new HttpPost("URL");
+					HttpPost request = new HttpPost("http://192.168.215.34:8080/api/transferencia");
 					request.setHeader("Accept", "application/json");
 					request.setHeader("Content-type", "application/json");
 					request.setEntity(entity);
