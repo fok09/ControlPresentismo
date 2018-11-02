@@ -113,4 +113,9 @@ public class Empleado implements Serializable{
 	public void setLegajo(String legajo) {
 		this.legajo = legajo;
 	}
+	
+	@Override
+	public String toString() {
+		return this.getLegajo()+" - "+this.getApellido()+", "+this.getNombre();
+	}
 }

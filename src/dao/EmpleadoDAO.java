@@ -54,13 +54,14 @@ public class EmpleadoDAO implements Serializable{
 		return result;
 	}
 	
-	public Empleado getByDni(int dni) {
-		Session session = sf.getCurrentSession();
-		session.beginTransaction();
-		Empleado result = (Empleado) session.get(Empleado.class, dni);
-		session.getTransaction().commit();
-		return result;
-	}
+//	public Empleado getByDni(int dni) {
+//		Session session = sf.getCurrentSession();
+//		session.beginTransaction();
+//		Empleado result = (Empleado) session.get(Empleado.class, dni);
+//		session.getTransaction().commit();
+//		System.out.println(result.getDni());
+//		return result;
+//	}
 	
 	public void eliminarEmpleado(Empleado e) {
 		Session session = sf.openSession();

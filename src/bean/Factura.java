@@ -131,6 +131,11 @@ public class Factura implements Serializable {
 	public void setContratacion(Contratacion contratacion) {
 		this.contratacion = contratacion;
 	}
-
+	
+	@Override
+	public String toString() {
+		return this.getNroFactura()+" - "+this.getFecha();
+		
+	}
 
 }

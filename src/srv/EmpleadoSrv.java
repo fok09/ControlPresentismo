@@ -27,9 +27,9 @@ private static EmpleadoDAO dao;
 		return dao.getById(idEmpleado);
 	}
 	
-	public static Empleado getEmpleadoByDni(int dni){
-		return dao.getByDni(dni);
-	}
+//	public static Empleado getEmpleadoByDni(int dni){
+//		return dao.getByDni(dni);
+//	}
 	
 	public static List<Empleado> getEmpleados(){
 		return dao.getEmpleados();
