@@ -1,4 +1,5 @@
 package hbt;
+<<<<<<< HEAD
 
 
 import java.sql.Time;
@@ -11,22 +12,39 @@ import bean.Cliente;
 import bean.Empleado;
 import bean.Fichada;
 import bean.PersonaFisica;
+=======
+
+>>>>>>> refs/remotes/origin/master
 import bean.Servicio;
+<<<<<<< HEAD
 import srv.ClienteSrv;
 import bean.Servicio;
+=======
+>>>>>>> refs/remotes/origin/master
 import srv.ServicioSrv;
 
 public class testHibernate {
 
 	public static void main(String[] args) {
 		HibernateUtil.getSessionFactory();
+<<<<<<< HEAD
+=======
+		
+		Servicio s1 = new Servicio ("Mensual",250, (float) 0.02);
+		Servicio s2 = new Servicio ("Eventual",200, (float) 0.02);
+		Servicio s3 = new Servicio ("Semanal",100, (float) 0.02);
+>>>>>>> refs/remotes/origin/master
 
+<<<<<<< HEAD
 		Servicio s1 = new Servicio("Mensual", 250, (float) 0.02);
 		Servicio s2 = new Servicio("Eventual", 200, (float) 0.02);
 		Servicio s3 = new Servicio("Semanal", 100, (float) 0.02);
+=======
+>>>>>>> refs/remotes/origin/master
 		ServicioSrv.grabarServicio(s1);
 		ServicioSrv.grabarServicio(s2);
 		ServicioSrv.grabarServicio(s3);
+<<<<<<< HEAD
 		
 //		PersonaFisica PJ = new PersonaFisica("1111", "domicilio", "cbu", "telefono", "mail", new Time(System.currentTimeMillis()), new Time(System.currentTimeMillis()),"nombre","apel");
 //		ClienteSrv.grabarPersonaFisica(PJ);
@@ -259,6 +277,8 @@ public class testHibernate {
 ////		
 //////		Contratacion c1 = new Contratacion(s1,fi ,ff , 200, 50, 0,cliente1);
 //////		ContratacionSrv.grabarContratacion(c1);
+=======
+>>>>>>> refs/remotes/origin/master
 	}
-
+	
 }
