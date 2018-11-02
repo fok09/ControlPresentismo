@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import bean.Cliente;
 import bean.PersonaFisica;
 import bean.PersonaJuridica;
+import dto.ClienteDTO;
 import hbt.HibernateUtil;
 
 public class ClienteDAO implements Serializable{
@@ -105,6 +106,15 @@ public class ClienteDAO implements Serializable{
 		List<PersonaFisica> list = session.createQuery("from Cliente").list();
 		session.close();
 		return list;
+	}
+	
+	public void eliminarCliente(Cliente c) {
+		Session session = sf.openSession();
+		session.beginTransaction();
+		session.delete(c);
+		session.flush();
+		session.getTransaction().commit();
+		session.close();	
 	}
 
 	public PersonaJuridica getPersonaJuridicaByIdCliente(int idCliente) {

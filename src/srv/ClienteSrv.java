@@ -7,6 +7,7 @@ import bean.Cliente;
 import bean.PersonaFisica;
 import bean.PersonaJuridica;
 import dao.ClienteDAO;
+import dto.ClienteDTO;
 
 public class ClienteSrv {
 
@@ -54,5 +55,9 @@ private static ClienteDAO dao;
 	
 	public static PersonaJuridica getPersonaJuridicaByIdCliente(int idCliente){
 		return dao.getPersonaJuridicaByIdCliente(idCliente);
+	}
+	
+	public static void eliminarCliente (Cliente cliente) {
+		dao.eliminarCliente(cliente);
 	}
 }
