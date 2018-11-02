@@ -115,13 +115,7 @@ public class Empleado implements Serializable{
 	}
 	
 	@Override
-<<<<<<< HEAD
 	public String toString() {
 		return this.getLegajo()+" - "+this.getApellido()+", "+this.getNombre();
-		
-=======
-	public String toString(){
-		return this.getDni();
->>>>>>> refs/remotes/origin/master
 	}
 }
