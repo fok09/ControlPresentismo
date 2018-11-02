@@ -130,7 +130,10 @@ public class Contratacion implements Serializable{
 		this.monto = monto;
 	}
 
-
+	@Override
+	public String toString() {
+		return this.getId() + " " + this.getServicio().getNombre() + " - " + this.getFechaInicial().toString().substring(0,11) + " a " + this.getFechaFinal().toString().substring(0, 11);
+	}
 
 
 }

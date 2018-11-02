@@ -2,13 +2,16 @@ package interfaces;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
+import java.util.Date;
 import java.util.List;
 import java.util.Vector;
 
+import bean.Cliente;
 import bean.Contratacion;
 import dto.ClienteDTO;
 import dto.ContratacionDTO;
 import dto.EmpleadoDTO;
+import dto.EmpleadoHorasDTO;
 import dto.FacturaDTO;
 import dto.FichadaDTO;
 import dto.PersonaFisicaDTO;
@@ -36,6 +39,9 @@ public interface SistemaPresentismo extends Remote {
 
 	public Vector<Vector<String>> getHorasTrabajadasTotales(String cuit_cuil, java.util.Date fechaInicio, java.util.Date fechaFin, Contratacion c) throws RemoteException;
 
-	public List<Contratacion> getContratacionesCliente(String cuitEmpresa) throws RemoteException;
+	public List<EmpleadoHorasDTO> getHorasTrabajadasTotalesLiqui(String cuit, Date cFechaInicio, Date cFechaFin) throws RemoteException;
 
+	public void enviarHorasTotales(List<EmpleadoHorasDTO> empleados, boolean liqui) throws RemoteException;
+
+	public List<Contratacion> getContratacionesCliente(Cliente cliente) throws RemoteException;
 }

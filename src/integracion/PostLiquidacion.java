@@ -7,29 +7,26 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
-import org.json.JSONException;
 import org.json.JSONObject;
+
+import dto.EmpleadoHorasDTO;
 
 //import bean.Empleado;
 
 
 public class PostLiquidacion {
-
-	public static void main(String[] args) {
-		PostLiquidacion p = new PostLiquidacion();
-	}
-	
-	public PostLiquidacion() throws JSONException {
+		
+	public static void postLiquidacionSueldos(EmpleadoHorasDTO empleado) {
 		JSONObject json = new JSONObject();
 
-		if ("mensual".equals("mensual") == true){
+		if (empleado.getTipo().equals("mensual") == true){
 			
 			json.accumulate("update", "absense_days");
-			json.accumulate("mount", "1");
+			json.accumulate("mount", empleado.getHorasAusentes()/8);
 			
-		}else if ("tipo".equals("hora") == true) {
+		}else if (empleado.getTipo().equals("hora") == true) {
 			json.accumulate("update", "worked_hours");
-			json.accumulate("mount", "10");
+			json.accumulate("mount", empleado.getHorasTrabajadas());
 		}
 		
 		
@@ -40,7 +37,35 @@ public class PostLiquidacion {
 		try {
 			entity = new StringEntity(json.toString());
 			HttpClient httpClient = HttpClientBuilder.create().build();
-			HttpPost request = new HttpPost("https://sueldosya.herokuapp.com/update/30715087738/8983298");
+			HttpPost request = new HttpPost("https://sueldosya.herokuapp.com/update/" + empleado.getCuitEmpresa() +"/" + empleado.getDni());
+			request.setHeader("Accept", "application/json");
+			request.setHeader("Content-type", "application/json");
+			request.setEntity(entity);
+
+			HttpResponse response = httpClient.execute(request);
+			System.out.println(response.getStatusLine().getStatusCode());
+			if(response.getStatusLine().getStatusCode() != 201) {
+				System.out.println(response.getStatusLine().getStatusCode());
+				
+			}
+		} catch (IOException e) {
+			
+		}
+	}
+	
+	public static void postGym(EmpleadoHorasDTO empleado) {
+		JSONObject json = new JSONObject();
+		
+		json.accumulate("update", "worked_hours");
+		json.accumulate("mount", empleado.getHorasTrabajadas());
+					
+		System.out.println(json.toString());
+
+		StringEntity entity;
+		try {
+			entity = new StringEntity(json.toString());
+			HttpClient httpClient = HttpClientBuilder.create().build();
+			HttpPost request = new HttpPost("https://sueldosya.herokuapp.com/update/" + empleado.getCuitEmpresa() +"/" + empleado.getDni());
 			request.setHeader("Accept", "application/json");
 			request.setHeader("Content-type", "application/json");
 			request.setEntity(entity);
