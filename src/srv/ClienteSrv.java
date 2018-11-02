@@ -7,7 +7,6 @@ import bean.Cliente;
 import bean.PersonaFisica;
 import bean.PersonaJuridica;
 import dao.ClienteDAO;
-import dto.ClienteDTO;
 
 public class ClienteSrv {
 
