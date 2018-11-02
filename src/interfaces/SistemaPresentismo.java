@@ -45,6 +45,6 @@ public interface SistemaPresentismo extends Remote {
 	public void enviarHorasTotales(List<EmpleadoHorasDTO> empleados, boolean liqui) throws RemoteException;
 
 	public List<Contratacion> getContratacionesCliente(Cliente cliente) throws RemoteException;
-	
+
 	public List<Factura> getFacturasCliente(Cliente cliente) throws RemoteException;
 }
