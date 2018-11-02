@@ -1,7 +1,9 @@
 package srv;
 
+import java.util.List;
 import java.util.Vector;
 
+import bean.Cliente;
 import bean.Empleado;
 import dao.EmpleadoDAO;
 
@@ -25,6 +27,17 @@ private static EmpleadoDAO dao;
 		return dao.getById(idEmpleado);
 	}
 	
+	public static Empleado getEmpleadoByDni(int dni){
+		return dao.getByDni(dni);
+	}
+	
+	public static List<Empleado> getEmpleados(){
+		return dao.getEmpleados();
+	}
+	
+	public static void eliminarEmpleado (Empleado empleado) {
+		dao.eliminarEmpleado(empleado);
+	}
 		
 		
 }
