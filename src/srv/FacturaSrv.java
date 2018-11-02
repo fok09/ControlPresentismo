@@ -2,6 +2,7 @@ package srv;
 
 import java.util.List;
 
+import bean.Cliente;
 import bean.Factura;
 import dao.FacturaDAO;
 
@@ -24,5 +25,9 @@ private static FacturaDAO dao;
 	
 	public static Factura getFacturaByNro(int nroFac) {
 		return dao.getFacturaByNro(nroFac);
+	}
+	
+	public static List<Factura> getFacturas() {
+		return dao.getFacturas();
 	}
 }
