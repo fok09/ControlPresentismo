@@ -19,6 +19,7 @@ public class PostLiquidacion {
 	public static void postLiquidacionSueldos(EmpleadoHorasDTO empleado) {
 		JSONObject json = new JSONObject();
 
+			
 		if (empleado.getTipo().equals("mensual") == true){
 			
 			json.accumulate("update", "absense_days");
@@ -31,7 +32,7 @@ public class PostLiquidacion {
 		
 		
 		System.out.println(json.toString());
-
+		System.out.println(empleado.getDni());
 
 		StringEntity entity;
 		try {
@@ -57,7 +58,7 @@ public class PostLiquidacion {
 		JSONObject json = new JSONObject();
 		String presentismo;
 		
-		json.accumulate("tipo", empleado.getTipo());
+		json.accumulate("tipoempleado", empleado.getTipo());
 		json.accumulate("dni", empleado.getDni());
 		
 		
@@ -67,11 +68,12 @@ public class PostLiquidacion {
 			}else {
 				presentismo = "false";
 			}
-			
+			json.accumulate("horastrabajas", empleado.getHorasTrabajadas());
 			json.accumulate("presentismo", presentismo);
-		}else if (empleado.getTipo().equals("hora") == true) {
-			json.accumulate("horas", empleado.getHorasTrabajadas());
 			
+		}else if (empleado.getTipo().equals("hora") == true) {
+			json.accumulate("horastrabajas", empleado.getHorasTrabajadas());
+			json.accumulate("presentismo", "true");
 		}
 			
 		System.out.println(json.toString());
@@ -89,6 +91,7 @@ public class PostLiquidacion {
 			System.out.println(response.getStatusLine().getStatusCode());
 			if(response.getStatusLine().getStatusCode() != 201) {
 				System.out.println(response.getStatusLine().getStatusCode());
+				System.out.println(response.getStatusLine().getReasonPhrase());
 				
 			}
 		} catch (IOException e) {

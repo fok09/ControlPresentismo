@@ -40,7 +40,7 @@ public interface SistemaPresentismo extends Remote {
 
 	public Vector<Vector<String>> getHorasTrabajadasTotales(String cuit_cuil, java.util.Date fechaInicio, java.util.Date fechaFin, Contratacion c) throws RemoteException;
 
-	public List<EmpleadoHorasDTO> getHorasTrabajadasTotalesLiqui(String cuit, Date cFechaInicio, Date cFechaFin) throws RemoteException;
+	public List<EmpleadoHorasDTO> getHorasTrabajadasTotalesLiqui(Cliente cliente, Date cFechaInicio, Date cFechaFin) throws RemoteException;
 
 	public void enviarHorasTotales(List<EmpleadoHorasDTO> empleados, boolean liqui) throws RemoteException;
 
