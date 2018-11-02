@@ -17,6 +17,7 @@ public class EmpleadoHorasDTO implements Serializable{
 	private String tipo;
 	private String nombre;
 	private String apellido;
+	private int horasATrabajar;
 	private int horasTrabajadas;
 	private int horasAusentes;
 	private int diasVacaciones;
@@ -43,6 +44,7 @@ public class EmpleadoHorasDTO implements Serializable{
 		this.dni = e.getDni();
 		this.legajo = e.getLegajo();
 		this.tipo = e.getTipo();
+		this.horasATrabajar = e.getHorasMensuales();
 		this.horasTrabajadas = 0;
 		this.horasAusentes = 0;
 		this.diasVacaciones = 0;
@@ -137,6 +139,14 @@ public class EmpleadoHorasDTO implements Serializable{
 
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+
+	public int getHorasATrabajar() {
+		return horasATrabajar;
+	}
+
+	public void setHorasATrabajar(int horasATrabajar) {
+		this.horasATrabajar = horasATrabajar;
 	}
 	
 	

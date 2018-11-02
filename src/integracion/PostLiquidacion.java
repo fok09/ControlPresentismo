@@ -55,10 +55,25 @@ public class PostLiquidacion {
 	
 	public static void postGym(EmpleadoHorasDTO empleado) {
 		JSONObject json = new JSONObject();
+		String presentismo;
 		
-		json.accumulate("update", "worked_hours");
-		json.accumulate("mount", empleado.getHorasTrabajadas());
-					
+		json.accumulate("tipo", empleado.getTipo());
+		json.accumulate("dni", empleado.getDni());
+		
+		
+		if (empleado.getTipo().equals("mensual") == true){
+			if ( empleado.getHorasTrabajadas()>=empleado.getHorasATrabajar()) {
+				presentismo = "true";
+			}else {
+				presentismo = "false";
+			}
+			
+			json.accumulate("presentismo", presentismo);
+		}else if (empleado.getTipo().equals("hora") == true) {
+			json.accumulate("horas", empleado.getHorasTrabajadas());
+			
+		}
+			
 		System.out.println(json.toString());
 
 		StringEntity entity;
