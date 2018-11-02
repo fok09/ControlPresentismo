@@ -1,6 +1,6 @@
 package hbt;
 
-<<<<<<< HEAD
+
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,30 +13,20 @@ import bean.Fichada;
 import bean.PersonaFisica;
 import bean.Servicio;
 import srv.ClienteSrv;
-=======
 import bean.Servicio;
->>>>>>> refs/remotes/origin/master
 import srv.ServicioSrv;
 
 public class testHibernate {
 
 	public static void main(String[] args) {
 		HibernateUtil.getSessionFactory();
-<<<<<<< HEAD
-		
-		Servicio s1 = new Servicio ("Mensual",250, (float) 0.02);
-		Servicio s2 = new Servicio ("Eventual",200, (float) 0.02);
-		Servicio s3 = new Servicio ("Semanal",100, (float) 0.02);
-=======
 
 		Servicio s1 = new Servicio("Mensual", 250, (float) 0.02);
 		Servicio s2 = new Servicio("Eventual", 200, (float) 0.02);
 		Servicio s3 = new Servicio("Semanal", 100, (float) 0.02);
->>>>>>> refs/remotes/origin/master
 		ServicioSrv.grabarServicio(s1);
 		ServicioSrv.grabarServicio(s2);
 		ServicioSrv.grabarServicio(s3);
-<<<<<<< HEAD
 		
 //		PersonaFisica PJ = new PersonaFisica("1111", "domicilio", "cbu", "telefono", "mail", new Time(System.currentTimeMillis()), new Time(System.currentTimeMillis()),"nombre","apel");
 //		ClienteSrv.grabarPersonaFisica(PJ);
@@ -106,7 +96,6 @@ public class testHibernate {
 //		for (Fichada f : mostrarFichadas) {
 //		    System.out.println(""+f.getId()+" - "+f.getTipo());
 //		}
-//>>>>>>> refs/remotes/origin/master
 		
 //		Servicio s1 = new Servicio("Mensual",1000,50);
 //		Servicio s2 = new Servicio("Semanal",700,60);
@@ -174,13 +163,11 @@ public class testHibernate {
 ////		for (Fichada f : mostrarFichadas) {
 ////		    System.out.println(""+f.getId()+" - "+f.getTipo());
 ////		}
-////>>>>>>> refs/remotes/origin/master
 //		
 ////		Servicio s1 = new Servicio("Mensual",1000,50);
 ////		Servicio s2 = new Servicio("Semanal",700,60);
 ////		Servicio s3 = new Servicio("Eventual",500,65);
 ////		
-////>>>>>>> refs/remotes/origin/master
 ////		ServicioSrv.grabarServicio(s1);
 ////		ServicioSrv.grabarServicio(s2);
 ////		ServicioSrv.grabarServicio(s3);
@@ -218,7 +205,6 @@ public class testHibernate {
 ////		List<Fichada> fichadas = new ArrayList<Fichada>();
 ////		java.util.Date fechaInicio = new GregorianCalendar(2018, 9, 1).getTime();
 ////		java.util.Date fechaFin = new GregorianCalendar(2018, 9, 30).getTime();
-//////<<<<<<< HEAD
 //////		Fichada fichi1 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,28));
 //////		Fichada fichi2 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(18, 0, 0), new Date(2018,10,28));
 //////		Fichada fichi3 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,29));
@@ -235,7 +221,6 @@ public class testHibernate {
 //////		
 ////		List<Fichada> mostrarFichadas = new ArrayList<Fichada>();
 //////		mostrarFichadas = FichadaSrv.getFichadasByCliente(ClienteSrv.getClienteByCuit(cliente2.getCuit_cuil()));
-//////=======
 //////		Fichada fichi1 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,28));
 //////		Fichada fichi2 = new Fichada("S",cliente1.getEmpleados().get(0), new Time(18, 0, 0), new Date(2018,10,28));
 //////		Fichada fichi3 = new Fichada("E",cliente1.getEmpleados().get(0), new Time(9, 0, 0), new Date(2018,10,29));
@@ -256,7 +241,6 @@ public class testHibernate {
 //////		for (Fichada f : mostrarFichadas) {
 //////		    System.out.println(""+f.getId()+" - "+f.getTipo());
 //////		}
-//////>>>>>>> refs/remotes/origin/master
 ////		
 //////		Servicio s1 = new Servicio("Mensual",1000,50);
 //////		Servicio s2 = new Servicio("Semanal",700,60);
@@ -275,9 +259,6 @@ public class testHibernate {
 ////		
 //////		Contratacion c1 = new Contratacion(s1,fi ,ff , 200, 50, 0,cliente1);
 //////		ContratacionSrv.grabarContratacion(c1);
-=======
-
->>>>>>> refs/remotes/origin/master
 	}
 
 }
